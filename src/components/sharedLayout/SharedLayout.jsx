@@ -2,7 +2,6 @@ import Header  from "../header/header"
 import Footer from "../footer/footer"
 import Home from '../home/home'
 import { Outlet, useLocation  } from "react-router-dom";
-import '@fontsource/delius'
 import './sharedLayout.module.css'; // Importing the CSS for shared layout
 
 // SharedLayout component that includes Header, Footer, and Outlet for nested routes
