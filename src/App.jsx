@@ -6,8 +6,8 @@ import React, { useState, useEffect } from 'react';
 
 function App() {
 
-  //const [data, setData] = useState(null);
-  //const [error, setError] = useState(null);
+  const [setData] = useState(null);
+  const [setError] = useState(null);
    useEffect(() => {
     fetch('https://srv80578.seohost.com.pl/myvideolist')
       .then(res => {
