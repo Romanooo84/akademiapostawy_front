@@ -1,24 +1,19 @@
-
-import { Route, Routes} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import SharedLayout from "./components/sharedLayout/SharedLayout";
-
-
+import Video from "./pages/video";
 
 function App() {
-
-  
-
-
   return (
-     <Routes>
+    <Routes>
       <Route path="/" element={<SharedLayout />}>
-        {/*<Route path="/picture of a day" element={<PictureOfADay/>}/>
-        <Route path="/gallery" element={<Gallery/>}/>
-        <Route path="/Mars Pictures" element={<PictureOfMars/>}/>
-        <Route path="/Near Earth Object" element={<NearObjectDetails/>}/>*/}
+        <Route path="Blog" element={<Video />} />
+        <Route path="projekty" element={<Video />} />
+        <Route path="fizjomemo" element={<Video />} />
+        <Route path="filmy" element={<Video />} />
+        <Route path="kontakt" element={<Video />} />
       </Route>
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;
