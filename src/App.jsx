@@ -1,29 +1,12 @@
 
 import { Route, Routes} from "react-router-dom";
 import SharedLayout from "./components/sharedLayout/SharedLayout";
-import React, { useState, useEffect } from 'react';
+
 
 
 function App() {
 
-  const [data,setData] = useState(null);
-  const [setError] = useState(null);
-   useEffect(() => {
-    fetch('https://srv80578.seohost.com.pl/myvideolist')
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(`Server error: ${res.status}`);
-        }
-        
-        return res.json(); // lub .text(), .blob() zależnie od odpowiedzi
-      })
-      .then(json => setData(json))
-      .catch(err => setError(err.message));
-  }, [])
-
-  useEffect(() => {
-    console.log(data)
-  },[data])
+  
 
 
   return (
