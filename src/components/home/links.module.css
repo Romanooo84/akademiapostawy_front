@@ -5,16 +5,34 @@
     justify-content: space-between;
 }
 
-.linkDiv{
+.linkButton{
     width: 400px;
+    cursor: pointer;
     border-radius: 20px;
     border: 5px solid #f3618e;
     overflow: hidden;
     background-color: #656592;
+    color: #e7bdca;
+    font-size: 20px;
+    transition: transform 1s ease-in-out;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.linkButton:hover{
+    transform: scale(1.05);
 }
 
 .picture{
     width: 400px;
     height: 400px;
     object-fit: cover;
+}
+
+.pDiv{
+    padding: 20px;
+    text-align: justify;
+    cursor: pointer;
 }

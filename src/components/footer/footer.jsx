@@ -1,9 +1,23 @@
+import css from './footer.module.css';
+import logo from '../../images/logo.png';
 
+const Footer = () => {
+    return (
+        <div className={css.mainDiv}>
+            <div className={css.imgDiv}>
+                <img src={logo} alt="Logo" />
+            </div>
+            <div>
+                partnerzy
+            </div>
+            <dvi>
+                media społecznościowe
+            </dvi>
+            <div>
+                kontakt
+            </div>
+        </div>
+    );
+};
 
-const Footer=()=>{
-    return(
-        <div>Footer</div>
-    )
-}
-
-export default Footer
+export default Footer;

@@ -1,9 +1,11 @@
 .mainDiv{
     display: flex;
     flex-direction: row;
-    border-bottom: 2px solid black;
+    border-bottom: 3px solid #f3618e;
     justify-content: space-between;
+    margin-top: 20px;
     margin-bottom: 20px;
+    padding-bottom: 15px;
 }
 
 img{
@@ -18,16 +20,21 @@ img{
 .buttonsDiv{
     margin-right: 150px;
     display: flex;
-    align-items: flex-end;
-    padding-bottom: 20px;
+    align-items: center;
     gap:30px;
     flex-wrap: wrap
 }
 
 .buttons{
-    color:#0f0546;
+    color:#f3618e;
     background: none;
     border: none;
     font-family: 'Irish Grover';
-    font-size: 25px;
+    font-size: 30px;
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.buttons:hover{
+    transform: scale(1.1);
 }

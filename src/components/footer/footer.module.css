@@ -1,0 +1,14 @@
+.mainDiv{
+    background-color: #656592;
+    display: flex;
+    justify-content: space-between
+}
+
+.imgDiv{
+    margin-left: 50px;
+}
+
+img{
+    width: 200px;
+    height: 100px;
+}
