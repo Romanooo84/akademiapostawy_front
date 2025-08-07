@@ -1,0 +1,20 @@
+.mainDiv{
+    margin: 100px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.linkDiv{
+    width: 400px;
+    border-radius: 20px;
+    border: 5px solid #f3618e;
+    overflow: hidden;
+    background-color: #656592;
+}
+
+.picture{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
