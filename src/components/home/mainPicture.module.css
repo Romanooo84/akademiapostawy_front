@@ -1,0 +1,29 @@
+.mainDiv {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+}
+
+.imageSlide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* DODAJ te domyślne style: */
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out, transform 5s ease-in-out;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.active {
+    /* TYLKO aktywne zdjęcie będzie widoczne i powiększane */
+    opacity: 1;
+    transform: scale(1.1);
+    z-index: 1;
+}

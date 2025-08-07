@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import SharedLayout from "./components/sharedLayout/SharedLayout";
-import Video from "./pages/video";
+import Video from "./pages//video/video";
 
 function App() {
   return (

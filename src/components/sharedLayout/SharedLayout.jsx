@@ -1,6 +1,6 @@
 import Header  from "../header/header"
 import Footer from "../footer/footer"
-import Home from '../home/home'
+import Home from '../../pages/home/home'; // Importing Home component
 import { Outlet, useLocation  } from "react-router-dom";
 import css from  './sharedLayout.module.css'; // Importing the CSS for shared layout
 
