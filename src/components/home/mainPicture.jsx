@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import css from './mainPicture.module.css'; // Assuming you have a CSS file for styling
 
 import picture1 from '../../images/przedszkole.jpg';
-import picture2 from '../../images/zajecia-dodatkowe-W-przedszkolu.jpg'
+import picture2 from '../../images/zajecia.jpg'
 import picture3 from '../../images/skolioza1.jpg';
 import picture4 from '../../images/skolioza2.jpg';
 import picture5 from '../../images/skolioza3.jpg';
