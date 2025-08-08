@@ -1,0 +1,36 @@
+.mainDiv{
+    margin: 100px 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 5px solid #f3618e;
+    overflow: hidden;
+    background-color: #656592;
+    color: #e7bdca;
+    font-size: 20px;
+}
+
+.titleDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.partnersListDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;}
+
+.partnerDiv{
+    width: 300px;
+    text-align: center;
+}
+
+.partnerImg{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}

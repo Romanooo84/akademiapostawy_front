@@ -1,5 +1,8 @@
 import css from './footer.module.css';
 import logo from '../../images/logo.png';
+import facebookIcon from '../../assets/facebook.svg';  
+import instagramIcon from '../../assets/instagram.svg';
+import youtubeIcon from '../../assets/youtube.svg'; 
 
 const Footer = () => {
     return (
@@ -8,11 +11,24 @@ const Footer = () => {
                 <img src={logo} alt="Logo" />
             </div>
             <div>
-                partnerzy
+                <div className={css.headerDiv}>
+                    <p>Odwiedź nas</p>
+                </div>
+                <div className={css.mediaDiv}>
+                    <a className={css.link} href="https://www.facebook.com/wadypostawy.edu/?_rdr" target="_blank" rel="noopener noreferrer">
+                        <img className={css.icon} src={facebookIcon} alt="facebook" />
+                        <span>Facebook</span>
+                    </a> 
+                    <a className={css.link} href="https://www.instagram.com/akademiapostawy/?utm_medium=copy_link" target="_blank" rel="noopener noreferrer">
+                        <img className={css.icon} src={instagramIcon} alt="instagram" />
+                        <span>Instagram</span>
+                    </a> 
+                    <a className={css.link} href="https://www.youtube.com/channel/UCWBr60EPg760Z4f2rMJDOkw" target="_blank" rel="noopener noreferrer">
+                        <img className={css.icon} src={youtubeIcon} alt="YouTube" />
+                        <span>YouTube</span>
+                    </a>  
+                </div>
             </div>
-            <dvi>
-                media społecznościowe
-            </dvi>
             <div>
                 kontakt
             </div>
