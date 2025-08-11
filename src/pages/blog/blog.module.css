@@ -1,0 +1,16 @@
+p{
+    margin-top: 20px;
+}
+
+code{
+    white-space: pre-wrap;    /* pozwala łamać linie w pre */
+    word-break: break-word;   /* łamanie długich słów */
+    overflow-wrap: break-word;
+    max-width: 100%; /* maksymalna szerokość */
+}
+
+.mainDiv{
+    width: 700px;
+    text-align: justify;
+    white-space: pre-line;
+}
