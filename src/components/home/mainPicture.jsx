@@ -25,7 +25,7 @@ const MainPicture = () => {
       clearTimeout(timeout);
       clearInterval(interval);
     };
-  }, []);
+  }, [pictureList.length]);
 
   return (
     <div className={css.mainDiv}>
