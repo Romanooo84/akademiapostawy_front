@@ -33,8 +33,12 @@ const BlogShortText = ( {blogsContent, setSelectedBlog }) => {
             <img src={blog.img} alt="Blog" className={css.image} />
             <div className={css.titleDiv}>
               <ReactMarkdown>{blog.title}</ReactMarkdown>
-              <ReactMarkdown>{blog.author}</ReactMarkdown>
-              <ReactMarkdown>{shortContent}</ReactMarkdown>
+              <div className={css.header2}>
+                <ReactMarkdown>{blog.author}</ReactMarkdown>
+              </div>
+              <div className={css.paragraph}>
+                <ReactMarkdown>{shortContent}</ReactMarkdown>
+              </div>
             </div>
           </div>
         );

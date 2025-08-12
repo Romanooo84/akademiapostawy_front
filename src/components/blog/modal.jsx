@@ -1,4 +1,4 @@
-import css from "./blog.module.css";
+import css from "./modal.module.css";
 import ReactMarkdown from 'react-markdown'
 
 const Modal= ({ setSelectedBlog, selectedBlog}) => {
@@ -17,12 +17,16 @@ const Modal= ({ setSelectedBlog, selectedBlog}) => {
             className={css.modalContent}
             onClick={(e) => e.stopPropagation()} // blokuje zamknięcie po kliknięciu w treść
           >
-            <button onClick={handleCloseModal}>X</button>
+            <div className={css.buttonDiv}>
+            <button className={css.button} onClick={handleCloseModal}>X</button>
+            </div>
 
             {/* Teraz mamy dostęp do wszystkich danych bloga */}
             <ReactMarkdown>{selectedBlog.title}</ReactMarkdown>
-            <ReactMarkdown>{selectedBlog.content}</ReactMarkdown>
-            <ReactMarkdown>{selectedBlog.author}</ReactMarkdown>
+            <div className={css.contentDiv}>
+              <ReactMarkdown>{selectedBlog.content}</ReactMarkdown>
+              <ReactMarkdown>{selectedBlog.author}</ReactMarkdown>
+            </div>
 
           </div>
         </div>
