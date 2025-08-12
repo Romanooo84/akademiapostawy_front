@@ -38,7 +38,9 @@ const Header=()=>{
     return(
         <div className={css.mainDiv}>
             <div className={css.imgDiv}>
+                <Link to={`/`}>
                 <img src={logo} alt="Logo"/>
+                </Link>
             </div>
             <div className={css.buttonsDiv}>
                 {buttons}

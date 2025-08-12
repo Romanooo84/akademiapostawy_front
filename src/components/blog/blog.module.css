@@ -2,15 +2,41 @@
 code{
     white-space: pre-wrap;    /* pozwala łamać linie w pre */
     word-break: break-word;   /* łamanie długich słów */
-    overflow-wrap: break-word;
-    max-width: 100%; /* maksymalna szerokość */
+    text-align: justify;
+    
 }
 
 .contentDiv{
-    width: 1000px;
+    margin-bottom: 50px;
+    width: 800px;
+    text-align: justify;
+    white-space: pre-line;
+    display: flex;
+    gap: 20px;
+    border-radius: 10px;
+    border: 3px solid #f3618e;
+    overflow: hidden;
+    background-color: #65659298;
+    transition: transform 1s ease-in-out;
+    padding: 10px;
+}
+
+.contentDiv:hover{
+    transform: scale(1.02);
+}
+
+.titleDiv{
     text-align: justify;
     white-space: pre-line;
 }
+
+.image{
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+}
+
+
 
 .modalOverlay {
   position: fixed;
