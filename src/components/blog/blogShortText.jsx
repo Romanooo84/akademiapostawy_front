@@ -1,6 +1,6 @@
 import css from "./blog.module.css";
 import ReactMarkdown from 'react-markdown'
-import kobieta from '../../images/blog/kobieta.jpg';
+
 
 const BlogShortText = ( {blogsContent, setSelectedBlog }) => {
 
