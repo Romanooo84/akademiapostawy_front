@@ -4,11 +4,12 @@
     justify-content: space-between;
     flex-direction: column;
     border-radius: 20px;
-    border: 5px solid #f3618e;
+    border: 2px solid #f3618e;
     overflow: hidden;
     background-color: #656592;
     color: #e7bdca;
     font-size: 20px;
+    box-shadow: 6px 7px 15px 2px rgb(193 135 157)
 }
 
 .titleDiv{
