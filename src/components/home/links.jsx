@@ -10,14 +10,14 @@ const Links = () => {
 
     return (
         <div className={css.mainDiv}>
-            <button onClick={() => navigate('/Filmy')} className={css.linkButton}>
+            <button onClick={() => navigate('/Blog')} className={css.linkButton}>
                 <img src={picture1} alt="Chłopiec z piłką" className={css.picture} />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at nunc nulla. Nullam id neque leo. Vivamus aliquet, lectus nec fringilla volutpat, est elit accumsan magna, non convallis justo purus in dui...</p>
+                <p>Blog</p>
             </button>
 
             <button onClick={() => navigate('/Filmy')} className={css.linkButton}>
                 <img src={picture2} alt="Doktor" className={css.picture} />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                <p>Filmy</p>
             </button>
 
             <button onClick={() => navigate('/Filmy')} className={css.linkButton}>

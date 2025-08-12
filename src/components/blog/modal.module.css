@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #6258ade8;
+  background: #6258ad8a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +21,7 @@
   width: 100%;
   max-height: 80vh;
   overflow-y: auto;
-  border: 10px solid #f3618e ;
+  border: 15px solid #656592 ;
   background-color: #656592;
 }
 
@@ -50,7 +50,8 @@
 
 h1{
     margin-top: 0;
-    color: #cf728ed6;
+    color: #f3aac0d6;
+    font-size: 28px;
 }
 
 h2{
@@ -64,7 +65,7 @@ h3{
 }
 
 p{
-  color: #e7bdca;
+  color: #f7cad8;
   font-size: 20px;
 }
 

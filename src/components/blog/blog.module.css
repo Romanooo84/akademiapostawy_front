@@ -9,6 +9,7 @@ code{
 h1{
     margin-top: 0;
     color: #cf728ed6;
+    font-size: 25px;
 }
 
 .header2{
@@ -22,7 +23,7 @@ h1{
 
 
 .contentDiv{
-    width: 800px;
+    width: 700px;
     text-align: justify;
     white-space: pre-line;
     display: flex;

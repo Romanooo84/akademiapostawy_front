@@ -9,19 +9,17 @@ const BlogShortText = ( {blogsContent, setSelectedBlog }) => {
     };
 
     const markup = blogsContent.map((blog, index) => {
-      const content = blog.content.trim();
+      let content = blog.content.trim();
       const hashIndex = content.indexOf('#');
-      
-      let shortContent;
 
       if (hashIndex !== -1) {
-        shortContent = content.slice(0, hashIndex).trim() + '...';
-      } else {
-        const words = content.split(/\s+/);
-        shortContent = words.length > 50
-          ? words.slice(0, 50).join(' ') + '...'
-          : blog.content;
+        content = content.slice(0, hashIndex).trim();
       }
+
+      const words = content.split(/\s+/);
+      const shortContent = words.length > 25
+        ? words.slice(0, 25).join(' ') + '...'
+        : content + (hashIndex !== -1 ? '...' : '');
         
         return (
           <div
