@@ -33,6 +33,7 @@ h1{
     background-color: #656592;
     transition: transform 1s ease-in-out;
     padding: 10px;
+    align-items: center
 }
 
 .contentDiv:hover{

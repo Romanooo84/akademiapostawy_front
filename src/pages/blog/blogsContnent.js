@@ -4,7 +4,7 @@ const blogsContent = [
   {
     title: `# Zostawić auto i pobiec do pracy? Czemu nie! Aktywność fizyczna w naszej codzienności.`,
     author: '## Aleksandra Kurbiel-Syrocka',
-    img:'http://localhost:5173/akademiapostawy_front/src/images/blog/kobieta.jpg',
+    img:'https://srv80578.seohost.com.pl/images/blog/kobieta.jpg',
     content: `Zamiast wsiąść do samochodu, założyłam buty biegowe i pobiegłam do pracy. Dlaczego? Bo to tylko 15 minut różnicy, a korzyści są ogromne!
 
 Jestem pewna, że macie podobnie jak ja – codziennie mnóstwo obowiązków: praca, dom, dzieci, zakupy, obowiązki szkolne, zajęcia dodatkowe, a w weekend jeszcze urodziny, imprezy, odwiedziny u dziadków. W tym wszystkim często powtarzamy sobie: Nie mam czasu na trening, mam tyle na głowie! Ale prawda jest taka, że nasze zdrowie to też obowiązek – wobec siebie, naszej rodziny i przyszłości. Dlatego postanowiłam, że ruch stanie się częścią mojej codzienności. Każdy krok się liczy, każdy ruch ma znaczenie.
@@ -36,7 +36,7 @@ Lennert Veerman , Jakob Tarp , Ruth Wijaya , Mary Njeri Wanjau , Holger Möller 
   {
     title:`# Współpraca – fizjoterapeuta i rodzic`,
     author: '## Aleksandra Kurbiel-Syrocka',
-    img:'http://localhost:5173/akademiapostawy_front/src/images/blog/kobieta.jpg',
+    img:'https://srv80578.seohost.com.pl/images/blog/kobieta.jpg',
 content:`Jeżeli Twoje dziecko kiedykolwiek wymagało fizjoterapii, to być może zastanawiałaś/eś się jak powinna wyglądać współpraca z terapeutą? Czy ta relacja bardziej przypomina tę z nauczycielem czy z lekarzem? Czy Twoja obecność na zajęciach pomaga czy wręcz przeciwnie? Czy zgłaszać swoje wątpliwości czy lepiej się nie wtrącać? Kto w tym układzie podejmuje decyzje? 
 
 ### Rodzic na terapii
@@ -79,7 +79,7 @@ Po wstępnym krótkim sprzeciwie, synek pracował dużo lepiej na zajęciach i p
   {
     title: `# Moje dziecko nie chce ćwiczyć w domu, co robić?`,
     author: `## Dorota Matczak`,
-    img:'http://localhost:5173/akademiapostawy_front/src/images/blog/cwiczenia.jpg',
+    img:'https://srv80578.seohost.com.pl/images/blog/cwiczenia.jpg',
 content: `Regularne ćwiczenia. U kogo to pojęcie wywołuje ciarki na plecach i zimne poty, ręka do góry. Cóż, jeżeli kiedykolwiek uczęszczałaś/eś do fizjoterapeuty lub trenera, to prawdopodobnie już kilka rozmów na ten temat za Tobą. Niełatwo jest wdrożyć nowe przyzwyczajenia, a jeszcze trudniej zmienić je w trwałe nawyki.
 
 ### Poprawa postawy wymaga regularności
