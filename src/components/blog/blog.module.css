@@ -6,8 +6,21 @@ code{
     
 }
 
+h1{
+    margin-top: 0;
+    color: #cf728ed6;
+}
+
+h2{
+  font-size: 20px;
+  color: #e9bfcade;
+}
+
+p{
+  color: #e7bdca;
+}
+
 .contentDiv{
-    margin-bottom: 50px;
     width: 800px;
     text-align: justify;
     white-space: pre-line;
@@ -16,7 +29,7 @@ code{
     border-radius: 10px;
     border: 3px solid #f3618e;
     overflow: hidden;
-    background-color: #65659298;
+    background-color: #656592;
     transition: transform 1s ease-in-out;
     padding: 10px;
 }
