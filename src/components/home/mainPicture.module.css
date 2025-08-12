@@ -3,6 +3,7 @@
   width: 100%;
   height: 700px;
   overflow: hidden;
+  box-shadow:  -1px 1px 18px 0px rgb(193 135 157);
 }
 
 .imageSlide {
