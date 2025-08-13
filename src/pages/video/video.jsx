@@ -34,18 +34,19 @@ const Video = () => {
             <p><strong>{video.title}</strong></p>
             <div style={{ position: 'relative', paddingBottom: '10%', height: '350px' ,width: '350px'}}>
               <iframe
-        src="https://www.youtube.com/embed/HnL7d_qMsCA"
-        title="Akademia Postawy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '700px',
-          height: '500px',
-        }}
-      ></iframe>
+                src={convertYouTubeUrlToEmbed(video.url)}
+                title={video.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '700px',
+                  height: '500px',
+                }}
+              ></iframe>
             </div>
             <p>{video.description}</p>
           </div>

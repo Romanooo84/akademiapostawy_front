@@ -28,7 +28,7 @@ const Screening = ()=>{
     <div className={css.text}>
         <ReactMarkdown
                     components={{
-                    img: ({ node, ...props }) => {
+                    img: ({ ...props }) => {
                     const src = imagesMap[props.src] || props.src;
                     return (
                         <img
