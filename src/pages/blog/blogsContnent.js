@@ -1,10 +1,10 @@
-
+const link = 'https://srv80578.seohost.com.pl/images/blog/';
 
 const blogsContent = [
   {
     title: `# Zostawić auto i pobiec do pracy? Czemu nie! Aktywność fizyczna w naszej codzienności.`,
     author: '## Aleksandra Kurbiel-Syrocka',
-    img:'https://srv80578.seohost.com.pl/images/blog/kobieta.jpg',
+    img:`${link}kobieta.jpg`,
     content: `Zamiast wsiąść do samochodu, założyłam buty biegowe i pobiegłam do pracy. Dlaczego? Bo to tylko 15 minut różnicy, a korzyści są ogromne!
 
 Jestem pewna, że macie podobnie jak ja – codziennie mnóstwo obowiązków: praca, dom, dzieci, zakupy, obowiązki szkolne, zajęcia dodatkowe, a w weekend jeszcze urodziny, imprezy, odwiedziny u dziadków. W tym wszystkim często powtarzamy sobie: Nie mam czasu na trening, mam tyle na głowie! Ale prawda jest taka, że nasze zdrowie to też obowiązek – wobec siebie, naszej rodziny i przyszłości. Dlatego postanowiłam, że ruch stanie się częścią mojej codzienności. Każdy krok się liczy, każdy ruch ma znaczenie.
@@ -36,7 +36,7 @@ Lennert Veerman , Jakob Tarp , Ruth Wijaya , Mary Njeri Wanjau , Holger Möller 
   {
     title:`# Współpraca – fizjoterapeuta i rodzic`,
     author: '## Aleksandra Kurbiel-Syrocka',
-    img:'https://srv80578.seohost.com.pl/images/blog/kobieta.jpg',
+    img:`${link}kobieta.jpg`,
 content:`Jeżeli Twoje dziecko kiedykolwiek wymagało fizjoterapii, to być może zastanawiałaś/eś się jak powinna wyglądać współpraca z terapeutą? Czy ta relacja bardziej przypomina tę z nauczycielem czy z lekarzem? Czy Twoja obecność na zajęciach pomaga czy wręcz przeciwnie? Czy zgłaszać swoje wątpliwości czy lepiej się nie wtrącać? Kto w tym układzie podejmuje decyzje? 
 
 ### Rodzic na terapii
@@ -79,7 +79,7 @@ Po wstępnym krótkim sprzeciwie, synek pracował dużo lepiej na zajęciach i p
   {
     title: `# Moje dziecko nie chce ćwiczyć w domu, co robić?`,
     author: `## Dorota Matczak`,
-    img:'https://srv80578.seohost.com.pl/images/blog/cwiczenia.jpg',
+    img:`${link}cwiczenia.jpg`,
 content: `Regularne ćwiczenia. U kogo to pojęcie wywołuje ciarki na plecach i zimne poty, ręka do góry. Cóż, jeżeli kiedykolwiek uczęszczałaś/eś do fizjoterapeuty lub trenera, to prawdopodobnie już kilka rozmów na ten temat za Tobą. Niełatwo jest wdrożyć nowe przyzwyczajenia, a jeszcze trudniej zmienić je w trwałe nawyki.
 
 ### Poprawa postawy wymaga regularności
@@ -109,7 +109,42 @@ A jeżeli masz wrażenie, że trudne dni zdarzają się ciut za często, to wpro
 
 Ćwiczenia mają pomagać, a nie szkodzić
 Jeżeli widzisz, że zadane ćwiczenia w jakiś sposób nie służą Twojemu dziecku (bardzo się męczy, sprawiają dyskomfort czy ból, rodzą frustrację), daj znać swojemu fizjoterapeucie. Być może trzeba wprowadzić zmiany w zadanych ćwiczeniach, zmienić poziom trudności albo  przepracować coś w gabinecie.`
-  }
+  },
+ {
+  title: "# Plecak szkolny, który wspiera zdrowy kręgosłup dziecka – praktyczne wskazówki",
+  author: "## Dorota Matczak",
+  img: `${link}przejscie.jpg`,
+  content: `Tornistry odgrywają istotną rolę w życiu uczniów, towarzysząc im w codziennych podróżach do szkoły i z powrotem do domu. Wybór odpowiedniego tornistra może mieć znaczący wpływ na komfort dziecka, organizację jego szkolnych przyborów, a przede wszystkim na jego postawę ciała. Rodzice często pytają mnie, jaki wybrać tornister. Czy lekki, czy usztywniony na plecach? Lepiej na ramiona, czy na kółkach? W tym artykule opiszę, na co warto zwrócić uwagę podczas dokonywania wyboru.
+
+Niewłaściwie dobrany tornister może przyczynić się do problemów z kręgosłupem, postawą ciała oraz mięśniami. Dla dzieci i młodzieży wybór tornistra to ważna decyzja pod kątem funkcjonalności i stylu. Różnorodność dostępnych rodzajów tornistrów sprawia, że każdy uczeń może znaleźć model, który spełni jego oczekiwania zarówno pod względem praktyczności, jak i estetyki. Często ozdobione są postaciami z ulubionych bajek, filmów czy gier. Często stanowi to dodatkową motywację do chodzenia do szkoły i wyrażania indywidualności.
+
+Natomiast rodzice kierują się innymi kryteriami przy wyborze plecaka. Pragną wybrać taki, który nie zaburzy postawy ciała dziecka. I słusznie. Jakie cechy powinien mieć zdrowy plecak dla dziecka?
+
+Wybierając tornister, przede wszystkim warto zwrócić uwagę na jego masę. Jeśli plecak sam w sobie jest ciężki to, co dopiero, jak spakuje się do niego książki, zeszyty, drugie śniadanie i wodę. Według zaleceń lekarzy i specjalistów ds. zdrowia, zaleceń CIOP oraz Amerykańskiej Akademii Pediatrii waga plecaka nie powinna przekraczać 10-15% masy ciała dziecka. Oznacza to, że dla ucznia ważącego 30 kg, plecak nie powinien ważyć więcej niż 3-4,5 kg. Jeżeli plecak jest zbyt ciężki, środek ciężkości przesuwa się do tyłu, co wpływa na stabilność dziecka. W czasie chodu zwiększa się przodpochylenie miednicy, tułów pochyla się do przodu a stawy biodrowe zginają się. Co za tym idzie, zmniejsza się aktywność mięśni przykręgosłupowych.
+
+Według badań dzieci, które musiały mierzyć się z ciężarem plecaka przewyższającym 10% masy ich ciała, miały prawie dwukrotnie większe ryzyko bólu mięśniowo-szkieletowego w stosunku do dzieci z prawidłowym ciężarem plecaków.
+
+Plecak ergonomiczny wsparciem dla zdrowego kręgosłupa. Tornister powinien być dobrze wyprofilowany z tyłu i dobrze przylegać do pleców ucznia. Szerokie, miękkie i regulowane paski umożliwiają dopasowanie plecaka do postury danego dziecka. Ważne, aby paski były dobrze dostosowane do długości ciała. Warto również zwrócić uwagę na kieszonki, przegródki i inne udogodnienia, które ułatwią organizację. Dzięki nim dziecko umieści cięższe przedmioty bliżej pleców, a lżejsze z przodu. To wszystko pomoże w utrzymaniu równowagi. Zostanie również równomiernie rozłożony ciężar na plecach, zmniejszając nacisk na kręgosłup i mięśnie.
+
+Dobierz właściwy rozmiar i pojemność plecaka dla swojego dziecka. Plecak musi być odpowiednio pojemny, aby pomieścił wszystkie szkolne przybory. Dzieci w młodszych klasach nie potrzebują dużo książek i zeszytów. Większość podręczników zostawiają w sali, natomiast starsze dzieci noszą je z klasy do klasy. Ważne, aby plecak nie był za duży dla dziecka. Należy dobrać go do wzrostu dziecka. Plecy tornistra powinny zaczynać się na wysokości barków, a kończyć na wysokości bioder.
+
+Plecak na kółkach czy tradycyjny, który wybrać? Tornistry na kółkach są szczególnie przydatne, gdy trzeba przetransportować bardzo dużo książek czy materiałów edukacyjnych. Przy wyborze tej opcji należy jednak wziąć pod uwagę drogę do szkoły (czy jest po asfalcie, czy po piasku lub żwirze). Badania wskazują, że zarówno noszenie plecaka, jak i ciągnięcie wózka o wadze 10–20% masy ciała dziecka nie powoduje asymetrii chodu u dzieci. Korzystanie z tornistra na kółkach wymaga jednak mniejszego wysiłku niż noszenie plecaka z takim samym obciążeniem.
+
+Inne badania również to potwierdzają. Dzieci poruszały się po chodniku z wybranymi przez siebie prędkościami bez torby, niosąc plecak o wadze 15% masy ciała oraz ciągnąc tornister na kółkach z takim samym obciążeniem. Nie uzyskano istotnych różnic w parametrach chodu między ciągnięciem, a chodem bez torby. Noszenie plecaka skutkowało jednak większymi zmianami kinematyki chodu niż ciągnięcie tornistra. Zwróćcie jednak uwagę na to, że podczas badań tornistry i plecaki były o odpowiedniej wadze, dostosowanej do dziecka oraz podłoże było płaskie. Co jak dziecko musi wnieść go po schodach? Średnio tornistry na wózkach ważą ok. 2 kg, natomiast plecaki bez usztywnień ok. 0,5 kg, a z usztywnieniem ok. 1 kg.
+
+Jeśli wybierzecie plecak na ramię albo torbę na kółkach to warto przypomnieć swoim dzieciom, że symetria jest ważna dla prawidłowego rozwoju. Plecak powinien być noszony na dwóch ramionach a ciągnięty naprzemiennie raz jedną, raz drugą ręką. Prawidłowe nawyki należy zawsze pielęgnować.
+
+Wybór odpowiedniego tornistra ma kluczowe znaczenie dla zdrowej postawy ciała ucznia. Dobrze dobrany tornister, dostosowany do indywidualnych potrzeb i postury, może pomóc w zadbaniu o zdrowy kręgosłup dziecka. Warto zwrócić uwagę na ciężar, właściwy rozmiar, możliwość regulacji oraz sposób pakowania, aby uczynić codzienne podróże do szkoły jak najbardziej komfortowymi i bezpiecznymi dla zdrowia. Zachęcam do regularnych ćwiczeń. Noszenie, czy ciągnięcie tornistrów wymaga silnych mięśni.
+
+
+Bibliografia:
+Hell. A, Braunschweig L., Grages B., Brunner R., Romkes J. The influence of backpack weight in school children: gait, muscle activity, posture and stability, Orthopade 2021 Jun;50(6):446-454.
+Orantes-Gonzalez E., Heredia-Jimenez J., Gait asymmetry and rating of perceived exertion: How are they influenced by carrying a backpack and pulling a trolley?, Work 2019;63(2):253-259.
+Orantes-Gonzalez E., Heredia-Jimenez J., Beneck G., Children require less gait kinematic adaptations to pull a trolley than to carry a backpack, Gait Posture. 2017 Feb;52:189-193.
+Sankaran S., John J., Patra S., Das R., Satapathy A., Prevalence of Musculoskeletal Pain and Its Relation With Weight of Backpacks in School-Going Children in Eastern India, Front Pain Res (Lausanne) 2021 Aug 18;2:684133.`
+}
+
 ];
+
 
 export default blogsContent;

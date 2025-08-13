@@ -1,0 +1,12 @@
+.mainDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto 100px;
+}
+
+.sectionsDiv{
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+}

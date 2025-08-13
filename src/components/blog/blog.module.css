@@ -8,8 +8,12 @@ code{
 
 h1{
     margin-top: 0;
-    color: #cf728ed6;
+    color: #f3aac0d6;
     font-size: 25px;
+}
+
+h2{
+    font-size: 20px;
 }
 
 .header2{
@@ -52,4 +56,5 @@ h1{
     height: 300px;
     object-fit: cover;
 }
+
 

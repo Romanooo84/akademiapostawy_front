@@ -20,9 +20,9 @@ const Links = () => {
                 <p>Filmy</p>
             </button>
 
-            <button onClick={() => navigate('/Filmy')} className={css.linkButton}>
+            <button onClick={() => navigate('/Projekty')} className={css.linkButton}>
                 <img src={picture3} alt="Miednica" className={css.picture} />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                <p>Projekty</p>
             </button>
 
             <button onClick={() => navigate('/Filmy')} className={css.linkButton}>

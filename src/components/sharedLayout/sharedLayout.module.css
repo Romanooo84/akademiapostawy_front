@@ -1,5 +1,11 @@
 body {
   font-family: 'Irish Grover' ;
-  background: linear-gradient(90deg, rgb(35, 39, 99) 0%, rgba(112, 108, 108, 0.11) 20%);
+  background: linear-gradient(
+  90deg,
+  rgba(86, 121, 226, 0.705) 0%,
+  white 10%,
+  white 90%,
+  rgba(86, 121, 226, 0.705) 100%
+);
   margin: 0 auto;
 }
