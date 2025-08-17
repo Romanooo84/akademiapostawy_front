@@ -12,11 +12,11 @@ const Modal= ({ setSelectedBlog, selectedBlog}) => {
   };
 
   const markdownComponents = {
-  h1: ({ node, ...props }) => <h1 className={css.header1} {...props} />,
-  h2: ({ node, ...props }) => <h2 className={css.header2} {...props} />,
-  h3: ({ node, ...props }) => <h3 className={css.header3} {...props} />,
-  p: ({ node, ...props }) => <p className={css.paragraph} {...props} />,
-  li: ({ node, ...props }) => <li className={css.li} {...props} />,
+  h1: ({  ...props }) => <h1 className={css.header1} {...props} />,
+  h2: ({  ...props }) => <h2 className={css.header2} {...props} />,
+  h3: ({  ...props }) => <h3 className={css.header3} {...props} />,
+  p: ({  ...props }) => <p className={css.paragraph} {...props} />,
+  li: ({  ...props }) => <li className={css.li} {...props} />,
 };
 
 
