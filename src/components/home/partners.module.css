@@ -6,8 +6,7 @@
     border-radius: 20px;
     border: 2px solid #f3618e;
     overflow: hidden;
-    background-color: #656592;
-    color: #e7bdca;
+    background-color: var(--background-link-color);
     font-size: 20px;
     box-shadow: 6px 7px 15px 2px rgb(193 135 157)
 }

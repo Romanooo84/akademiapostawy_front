@@ -2,7 +2,7 @@ import Header  from "../header/header"
 import Footer from "../footer/footer"
 import Home from '../../pages/home/home'; // Importing Home component
 import { Outlet, useLocation  } from "react-router-dom";
-import css from  './sharedLayout.module.css'; // Importing the CSS for shared layout
+
 
 // SharedLayout component that includes Header, Footer, and Outlet for nested routes
 
@@ -11,7 +11,7 @@ const SharedLayout = () => {
     const { pathname } = location;
 
  return (
-  <div className={css.sharedLayout}> 
+  <div> 
     <Header />
     <main>
       <div>

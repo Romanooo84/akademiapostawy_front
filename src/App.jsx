@@ -3,6 +3,7 @@ import SharedLayout from "./components/sharedLayout/SharedLayout";
 import Video from "./pages//video/video";
 import Blog from "./pages/blog/blog.jsx";
 import Projects from "./pages/projects/projects.jsx";
+import './App.css'
 
 function App() {
   return (
