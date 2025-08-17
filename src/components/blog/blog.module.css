@@ -11,10 +11,8 @@ code{
     white-space: pre-line;
     display: flex;
     gap: 20px;
-    border-radius: 10px;
-    border: 3px solid #f3618e;
+    border: 2px solid #f3618e;
     overflow: hidden;
-    background-color: #656592;
     transition: transform 1s ease-in-out;
     padding: 10px;
     align-items: center;
@@ -27,7 +25,10 @@ code{
 
 .titleDiv{
     text-align: justify;
+    display: flex;
     white-space: pre-line;
+    gap: 10px;
+    flex-direction: column;
 }
 
 .image{

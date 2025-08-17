@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Cagliostro&family=Julius+Sans+One&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cagliostro&family=Julius+Sans+One&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&display=swap');
 :root {
   --primary-color: #0f075d;
-  --secondary-color: #2e53cc;
+  --secondary-color: #3f1f9d;
+  --article-color:black;
   --background-color: #656592;
   --background-link-color:#6565928f;
   --font-main: "Cagliostro", sans-serif;
-  --font-article: "Montserrat", sans-serif;
+  --font-article: "Oswald", sans-serif;
   --spacing: 16px;
 }
 
@@ -29,7 +29,7 @@ button{
 
 h1{
   color: var(--primary-color);
-  font-size: 25px;
+  font-size: 26px;
   margin: 0;
 }
 
@@ -37,9 +37,18 @@ h2{
   color: var(--primary-color);
   font-size: 23px;
   margin: 0;
+  font-weight: 500;
+  color: var(--secondary-color);
 }
 
 p{
   color: var(--primary-color);
   font-size: 18px;
+  margin: 0;
+}
+
+li{
+    color: var(--primary-color);
+    font-size: 18px;
+    margin: 0;
 }

@@ -11,6 +11,15 @@ const Modal= ({ setSelectedBlog, selectedBlog}) => {
     setSelectedBlog(null);
   };
 
+  const markdownComponents = {
+  h1: ({ node, ...props }) => <h1 className={css.header1} {...props} />,
+  h2: ({ node, ...props }) => <h2 className={css.header2} {...props} />,
+  h3: ({ node, ...props }) => <h3 className={css.header3} {...props} />,
+  p: ({ node, ...props }) => <p className={css.paragraph} {...props} />,
+  li: ({ node, ...props }) => <li className={css.li} {...props} />,
+};
+
+
     return(
   <div className={css.modalOverlay} onClick={handleCloseModal}>
           <div
@@ -22,10 +31,10 @@ const Modal= ({ setSelectedBlog, selectedBlog}) => {
             </div>
 
             {/* Teraz mamy dostęp do wszystkich danych bloga */}
-            <ReactMarkdown>{selectedBlog.title}</ReactMarkdown>
+            <ReactMarkdown components={markdownComponents}>{selectedBlog.title}</ReactMarkdown>
             <div className={css.contentDiv}>
-              <ReactMarkdown>{selectedBlog.content}</ReactMarkdown>
-              <ReactMarkdown>{selectedBlog.author}</ReactMarkdown>
+              <ReactMarkdown components={markdownComponents}>{selectedBlog.content}</ReactMarkdown>
+              <ReactMarkdown components={markdownComponents}>{selectedBlog.author}</ReactMarkdown>
             </div>
 
           </div>

@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #6258ad8a;
+  background: #000000c2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,8 +21,7 @@
   width: 100%;
   max-height: 80vh;
   overflow-y: auto;
-  border: 15px solid #656592 ;
-  background-color: #656592;
+  border: 10px solid var(--background-link-color);
 }
 
 .buttonDiv{
@@ -46,5 +45,24 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  font-family:var(--font-article) !important
 }
+
+.header1, 
+.header2,
+.header3,
+.paragraph,
+.li {
+  color: black;
+  font-family: var(--font-article);
+
+}
+
+.header1{
+  margin-bottom: 20px;
+  font-size: 35px;
+  font-style: italic;
+  font-weight: 500;
+}
+
 
