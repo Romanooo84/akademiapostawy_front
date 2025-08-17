@@ -12,22 +12,22 @@ const Links = () => {
         <div className={css.mainDiv}>
             <button onClick={() => navigate('/Blog')} className={css.linkButton}>
                 <img src={picture1} alt="Chłopiec z piłką" className={css.picture} />
-                <p>Blog</p>
+                <h1>Blog</h1>
             </button>
 
             <button onClick={() => navigate('/Filmy')} className={css.linkButton}>
                 <img src={picture2} alt="Doktor" className={css.picture} />
-                <p>Filmy</p>
+                <h1>Filmy</h1>
             </button>
 
             <button onClick={() => navigate('/Projekty')} className={css.linkButton}>
                 <img src={picture3} alt="Miednica" className={css.picture} />
-                <p>Projekty</p>
+                <h1>Projekty</h1>
             </button>
 
             <button onClick={() => navigate('/Filmy')} className={css.linkButton}>
                 <img src={picture4} alt="Stopy" className={css.picture} />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                <h1>Fizjomemo</h1>
             </button>
         </div>
     );

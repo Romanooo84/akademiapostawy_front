@@ -2,19 +2,8 @@
 code{
     white-space: pre-wrap;    /* pozwala łamać linie w pre */
     word-break: break-word;   /* łamanie długich słów */
-    text-align: justify;
-    
+    text-align: justify;    
 }
-
-.header2{
-  font-size: 20px;
-  color: #e9bfcade;
-}
-
-.paragraph{
-  color: #e7bdca;
-}
-
 
 .contentDiv{
     width: 700px;

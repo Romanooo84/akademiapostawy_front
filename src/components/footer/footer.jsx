@@ -12,7 +12,7 @@ const Footer = () => {
             </div>
             <div>
                 <div className={css.headerDiv}>
-                    <p>Odwiedź nas</p>
+                    <h2>Odwiedź nas</h2>
                 </div>
                 <div className={css.mediaDiv}>
                     <a className={css.link} href="https://www.facebook.com/wadypostawy.edu/?_rdr" target="_blank" rel="noopener noreferrer">
