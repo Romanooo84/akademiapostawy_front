@@ -12,15 +12,12 @@
     flex-direction: column;
 }
 
-
-
-.tabNav{
+.tabNav{  
   display: flex;
   flex-direction: column;
   gap: 20px;
   position: fixed;
-  width: -webkit-fill-available;
-  margin-left: 100px
+  left: 100px;
 }
 
 .tabNav button {

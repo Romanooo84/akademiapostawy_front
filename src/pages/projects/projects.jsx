@@ -32,7 +32,7 @@ const Projects = () => {
     <div className={css.mainDiv}>
       <nav className={css.tabNav}>{buttonsMarkup}</nav>
       <div className={css.sectionsDiv}>
-        <ProjectsRender projectsContent={projectsContent} />
+        <ProjectsRender projectsContent={projectsContent}  activeTab={activeTab}/>
       </div>
     </div>
   );
