@@ -1,7 +1,7 @@
 .mainDiv{
     display: flex;
     flex-direction: row;
-    margin: auto 200px;
+    margin: auto 150px;
     gap: 20px;
     justify-content: right;
     position: relative;
@@ -19,7 +19,7 @@
   flex-direction: column;
   gap: 20px;
   position: fixed;
-  left: 200px;
+  left: 150px;
 }
 
 .tabNav button {
