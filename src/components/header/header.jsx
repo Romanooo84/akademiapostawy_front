@@ -36,7 +36,7 @@ const Header=()=>{
     }, [location])
 
     return(
-        <div className={css.mainDiv}>
+        <header className={css.mainDiv}>
             <div className={css.imgDiv}>
                 <Link to={`/`}>
                 <img src={logo} alt="Logo"/>
@@ -45,7 +45,7 @@ const Header=()=>{
             <div className={css.buttonsDiv}>
                 {buttons}
             </div>
-        </div>
+        </header>
     )
 }
 

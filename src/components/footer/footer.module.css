@@ -5,6 +5,9 @@
     color: var(--primary-color);
     margin-bottom: 30px;
     padding-top: 30px;
+    margin-top: 100px;
+    background: linear-gradient(90deg, var(--background-color) 0%, white 10%, white 90%, var(--background-color) 100%);
+    position: relative;
 }
 
 .imgDiv{

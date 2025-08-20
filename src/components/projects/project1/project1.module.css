@@ -3,14 +3,14 @@
     align-items: center;
     flex-direction: column;
     text-align: justify;
-    width: 1250px;
+    width: 1000px;
     box-shadow: -1px 6px 20px 2px rgb(193 135 157);
     padding: 100px;
     padding-top: 50px;
     overflow: hidden;
 }
 .mainImg{
-    width: 1200px;
+    width: 1000px;
     height: 500px;
     object-fit: cover;
 }
@@ -36,6 +36,23 @@
 }
 .text{
     margin-top: 50px;
+}
+
+.header1, 
+.header2,
+.header3,
+.paragraph,
+.li {
+  color: black;
+  font-family: var(--font-article);
+
+}
+
+.header1{
+  margin-bottom: 20px;
+  font-size: 35px;
+  font-style: italic;
+  font-weight: 500;
 }
 
 

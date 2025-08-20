@@ -6,7 +6,7 @@ import youtubeIcon from '../../assets/youtube.svg';
 
 const Footer = () => {
     return (
-        <div className={css.mainDiv}>
+        <footer className={css.mainDiv}>
             <div className={css.imgDiv}>
                 <img src={logo} alt="Logo" />
             </div>
@@ -32,7 +32,7 @@ const Footer = () => {
             <div>
                 kontakt
             </div>
-        </div>
+        </footer>
     );
 };
 

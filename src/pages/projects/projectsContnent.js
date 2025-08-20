@@ -55,8 +55,6 @@ content:`Badania przesiewowe to szybki i nieinwazyjny sposób na ocenę sylwetki
 ### Dlaczego badania przesiewowe są tak istotne?
 Wady postawy mogą prowadzić do poważnych konsekwencji zdrowotnych, takich jak bóle kręgosłupa, ograniczenie sprawności fizycznej czy nawet deformacje kostne. **Nieleczone mogą skutkować chorobami w dorosłym życiu**.
 
-![Opis obrazka](picture1) 
-
 ### Dzięki profilaktycznym badaniom przesiewowym możemy:
 
 - Wczesne wykryć nieprawidłowości w postawie dziecka.
