@@ -4,11 +4,11 @@
     flex-direction: column;
     text-align: justify;
     width: 1250px;
-    padding: 20px;
-    border-radius: 20px;
+    box-shadow: 6px 7px 15px 2px rgb(193 135 157);
     padding: 100px;
-    border-radius: 20px;
+    padding-top: 50px;
     border: 2px solid #f3618e;
+    overflow: hidden;
 }
 .mainImg{
     width: 1200px;
@@ -37,11 +37,6 @@
 }
 .text{
     margin-top: 50px;
-}
-
-.h1{
-    color: #f77a9ade;
-    font-size: 40px;
 }
 
 

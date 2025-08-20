@@ -1,41 +1,41 @@
-  import { useState } from "react";
-  import css from './projects.module.css';
-  import Posture from "../../components/projects/project1/posture";
-  import Screening from "../../components/projects/project2/screening";
+import { useState } from "react";
+import css from './projects.module.css';
+import ProjectsRender from "../../components/projects/project1/posture";
+import projectsContent from "./projectsContnent";
 
-  const Projects = () => {
-    const [activeTab, setActiveTab] = useState("section1");
+const Projects = () => {
+  const [activeTab, setActiveTab] = useState("section1");
 
-    return (
-      <div className={css.mainDiv}>
-        <nav className={css.tabNav}>
-          <button
-            className={activeTab === "section1" ? css.activeTab : ""}
-            onClick={() => setActiveTab("section1")}
-          >
-            Prawidłowa postawa
-          </button>
-          <button
-            className={activeTab === "section2" ? css.activeTab : ""}
-            onClick={() => setActiveTab("section2")}
-          >
-            Badania przesiewowe
-          </button>
-          <button
-            className={activeTab === "section3" ? css.activeTab : ""}
-            onClick={() => setActiveTab("section3")}
-          >
-            Akcja Plecaki
-          </button>
-        </nav>
-
-        <div className={css.sectionsDiv}>
-          {activeTab === "section1" && <Posture />}
-          {activeTab === "section2" && <Screening />}
-          {activeTab === "section3" && <div>Sekcja 3</div>}
-        </div>
-      </div>
-    );
+  const handleClick = (id) => {
+    setActiveTab(id);
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
-  export default Projects;
+  const buttonsMarkup = projectsContent.map((project, key) => {
+    const id = `section${key+1}`;
+    return (
+      <button
+        className={activeTab === id ? css.activeTab : ""}
+        key={key}
+        onClick={() => handleClick(id)}
+      >
+        <img className={css.projectImg} src={project.img}/>
+        <h1>{project.title}</h1>
+      </button>
+    );
+  });
+
+  return (
+    <div className={css.mainDiv}>
+      <nav className={css.tabNav}>{buttonsMarkup}</nav>
+      <div className={css.sectionsDiv}>
+        <ProjectsRender projectsContent={projectsContent} />
+      </div>
+    </div>
+  );
+};
+
+export default Projects;

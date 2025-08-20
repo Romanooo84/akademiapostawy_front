@@ -1,6 +1,7 @@
 import Header  from "../header/header"
 import Footer from "../footer/footer"
 import Home from '../../pages/home/home'; // Importing Home component
+import css from './sharedLayout.module.css'
 import { Outlet, useLocation  } from "react-router-dom";
 
 
@@ -14,7 +15,7 @@ const SharedLayout = () => {
   <div> 
     <Header />
     <main>
-      <div>
+      <div className={css.mainDiv}>
         {pathname === '/' ? <Home /> : <Outlet />}
       </div>
     </main>
