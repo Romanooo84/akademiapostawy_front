@@ -65,7 +65,6 @@ const move = (direction) => {
               const scale = isActive ? 1.1 : 0.8;
               const opacity = isActive ? 1 : 0.5;
               const zIndex = isActive ? 2 : 1;
-              const translateY = isActive ? 0 : distance * 10;
 
               return (
                 <button
