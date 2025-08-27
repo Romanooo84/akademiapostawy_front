@@ -13,7 +13,7 @@ const Projects = () => {
   return (
     <div className={css.mainDiv}>
       <div className={css.tabAndBoxDiv}>
-        <ProjectButtons projectsContent={projectsContent}  activeTab={activeTab} setActiveTab={setActiveTab}/>
+        <ProjectButtons projectsContent={projectsContent} setActiveTab={setActiveTab}/>
       </div>
       <div className={css.sectionsDiv}>
         <ProjectsRender projectsContent={projectsContent}  activeTab={activeTab}/>

@@ -1,11 +1,11 @@
 import { useState, useRef } from "react";
 import css from "./ProjectButtons.module.css";
 
-const ProjectButtons = ({projectsContent, activeTab, setActiveTab}) => {
+const ProjectButtons = ({projectsContent, setActiveTab}) => {
   const carouselRef = useRef(null);
   const total = projectsContent.length
   const [currentIndex, setCurrentIndex] = useState(1);
-  const itemHeight = 100 + 10; // wysokość elementu + gap
+  const itemHeight = 70 + 10; // wysokość elementu + gap
 
   const handleClick = (idx) => {
   setActiveTab(`section${idx + 1}`); 
@@ -60,11 +60,12 @@ const move = (direction) => {
       <div className={css.wrapper}>
         <div className={css.carousel} ref={carouselRef}>
             {loopedProjects.map((project, idx) => {
-              const distance = Math.abs((idx % total) - ((currentIndex + 1) % total));
+              const distance = Math.abs((idx % total) - ((currentIndex + 2) % total));
               const isActive = distance === 0;  // tylko ten przycisk aktywny
               const scale = isActive ? 1.1 : 0.8;
               const opacity = isActive ? 1 : 0.5;
               const zIndex = isActive ? 2 : 1;
+              const translateY = isActive ? 0 : distance * 10;
 
               return (
                 <button
@@ -72,6 +73,7 @@ const move = (direction) => {
                   className={css.item}
                   onClick={isActive ? () => handleClick(idx % total) : undefined} // tylko aktywny klikalny
                   style={{
+                    transform: `translateY(${translateY}px) scale(${scale})`,
                     transform: `scale(${scale})`,
                     opacity: opacity,
                     zIndex: zIndex,
