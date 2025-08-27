@@ -85,6 +85,14 @@ Pod patronatem Warszawskiego Uniwersytetu Medycznego przebadaliśmy już ponad 1
     title: `Akcja plecaki`,
     img:`${link}cover_plecakiR23.jpg`,
 content:'' },
+ {
+    title: `test 2`,
+    img:`${link}cover_plecakiR23.jpg`,
+content:'' },
+ {
+    title: `Test1`,
+    img:`${link}cover_plecakiR23.jpg`,
+content:'' },
 ];
 
 

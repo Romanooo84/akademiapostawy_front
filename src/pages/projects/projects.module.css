@@ -1,10 +1,11 @@
 .mainDiv{
-    display: flex;
+     display: flex;
     flex-direction: row;
     margin: auto 150px;
     gap: 20px;
-    justify-content: right;
+    justify-content: space-around;
     position: relative;
+    align-items: flex-start;
 
 }
 
@@ -14,12 +15,29 @@
     flex-direction: column;
 }
 
-.tabNav{  
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  position: fixed;
-  left: 150px;
+.tabAndBoxDiv{
+    z-index: 1;
+    position: sticky;
+    top: 200px;
+
+}
+
+.tabNav{ 
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.shadowDiv{
+  box-shadow: #f3618e;
+}
+
+.activeTab {
+    transform: scale(1.1);
+    background-color: #fce3ec88;
+    transition: transform 0.5s ease-in-out !important;
+    opacity: 1 !important;
+    
 }
 
 .tabNav button {
@@ -35,13 +53,10 @@
     box-shadow: 6px 7px 15px 2px rgb(193 135 157);
     cursor: pointer;
     transition: transform 0.5s ease-in-out, background-color 1.5s ease;
+    opacity: 0.5;
 }
 
-.activeTab {
-    transform: scale(1.1);
-    background-color: #fce3ec88;
-    transition: transform 0.5s ease-in-out; 
-}
+
 
 .tabNav button:hover {
   background-color: #fce3ec88;

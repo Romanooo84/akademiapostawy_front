@@ -4,6 +4,7 @@
   --secondary-color: #3f1f9d;
   --article-color:black;
   --background-color: #656592;
+  --main-background: linear-gradient(90deg, var(--background-color) 0%, white 10%, white 90%, var(--background-color) 100%);
   --background-link-color:#6565928f;
   --font-main: "Cagliostro", sans-serif;
   --font-article: "Oswald", sans-serif;
