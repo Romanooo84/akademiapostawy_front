@@ -4,7 +4,7 @@ import css from "./ProjectButtons.module.css";
 const ProjectButtons = ({projectsContent, setActiveTab}) => {
   const carouselRef = useRef(null);
   const total = projectsContent.length
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const itemHeight = 70 + 10; // wysokość elementu + gap
 
   const handleClick = (idx) => {
@@ -73,7 +73,7 @@ const move = (direction) => {
                   className={css.item}
                   onClick={isActive ? () => handleClick(idx % total) : undefined} // tylko aktywny klikalny
                   style={{
-                    transform: `translateY(${translateY}px) scale(${scale})`,
+                    transform: `scale(${scale})`,
                     opacity: opacity,
                     zIndex: zIndex,
                     cursor: isActive ? "pointer" : "default",   // łapka tylko dla aktywnego
