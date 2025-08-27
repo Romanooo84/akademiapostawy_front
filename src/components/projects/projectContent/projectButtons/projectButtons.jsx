@@ -74,7 +74,6 @@ const move = (direction) => {
                   onClick={isActive ? () => handleClick(idx % total) : undefined} // tylko aktywny klikalny
                   style={{
                     transform: `translateY(${translateY}px) scale(${scale})`,
-                    transform: `scale(${scale})`,
                     opacity: opacity,
                     zIndex: zIndex,
                     cursor: isActive ? "pointer" : "default",   // łapka tylko dla aktywnego
