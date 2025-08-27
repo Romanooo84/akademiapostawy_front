@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import css from "./ProjectButtons.module.css";
+import css from "./projectButtons.module.css";
 
 const ProjectButtons = ({projectsContent, setActiveTab}) => {
   const carouselRef = useRef(null);
