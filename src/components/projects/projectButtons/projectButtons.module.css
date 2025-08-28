@@ -19,7 +19,7 @@
   border-radius: 30px;
   margin: 0 auto;
   width: 400px;
-  height: calc(50px + 5 * var(--itemHeight));
+  height: calc(30px + 3 * var(--itemHeight));
   overflow: hidden;
   position: relative;
 }

@@ -1,0 +1,41 @@
+.mainDiv{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.videoDiv{
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center
+    
+    
+}
+
+.line{
+    margin-top: 30px;
+    border-bottom: var(--line-border-bottom);
+    box-shadow: var(--line-box-shadow);
+    width: 100%;
+}
+
+.contentDiv{
+    margin-top: 50px;
+    display: flex;
+    gap: 50px;
+    padding: 0 50px;
+    align-items: center
+}
+
+.iframeDiv{
+    width: 800px;
+    height: 600px;
+}
+
+.iframe{
+    width: 800px;
+    height: 600px;
+}

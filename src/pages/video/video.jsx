@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
+import css from './video.module.css'
+import Loader from '../../components/loader/loader';
 
 const Video = () => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [videoRendered, setVideoRendered] = useState(null);
+  const [isLoading, setIsLoading]=useState(true)
 
   // Funkcja konwertująca standardowy link YouTube na link do embedowania
   const convertYouTubeUrlToEmbed = (url) => {
@@ -30,29 +33,27 @@ const Video = () => {
     if (data != null) {
       const markup = data.map((video, key) => {
         return (
-          <div key={key} style={{ marginBottom: '30px' }}>
-            <p><strong>{video.title}</strong></p>
-            <div style={{ position: 'relative', paddingBottom: '10%', height: '350px' ,width: '350px'}}>
-              <iframe
-                src={convertYouTubeUrlToEmbed(video.url)}
-                title={video.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '700px',
-                  height: '500px',
-                }}
-              ></iframe>
+          <div key={key} className={css.videoDiv}>
+           
+            <h1><strong>{video.title}</strong></h1>
+             <div className={css.contentDiv}>
+                <div className={css.iframeDiv}>
+                  <iframe
+                    src={convertYouTubeUrlToEmbed(video.url)}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className={css.iframe}
+                  ></iframe>
+                </div>
+                <p>{video.description}</p>
             </div>
-            <p>{video.description}</p>
+            <div className={css.line}></div>
           </div>
         );
       });
       setVideoRendered(markup);
+      setIsLoading(false)
     }
   }, [data]);
 
@@ -60,7 +61,17 @@ const Video = () => {
     return <p>Błąd: {error}</p>;
   }
 
-  return <>{videoRendered}</>;
+    return (
+      isLoading ? (
+        <div>
+          <Loader/>
+        </div>
+      ) : (
+        <div className={css.mainDiv}>
+          {videoRendered}
+        </div>
+      )
+);
 };
 
 export default Video;

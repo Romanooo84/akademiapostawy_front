@@ -4,7 +4,7 @@ import css from "./projectButtons.module.css";
 const ProjectButtons = ({projectsContent, setActiveTab}) => {
   const carouselRef = useRef(null);
   const total = projectsContent.length
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(1);
   const itemHeight = 70 + 10; // wysokość elementu + gap
 
   const handleClick = (idx) => {
@@ -60,7 +60,7 @@ const move = (direction) => {
       <div className={css.wrapper}>
         <div className={css.carousel} ref={carouselRef}>
             {loopedProjects.map((project, idx) => {
-              const distance = Math.abs((idx % total) - ((currentIndex + 2) % total));
+              const distance = Math.abs((idx % total) - ((currentIndex + 1) % total));
               const isActive = distance === 0;  // tylko ten przycisk aktywny
               const scale = isActive ? 1.1 : 0.8;
               const opacity = isActive ? 1 : 0.5;

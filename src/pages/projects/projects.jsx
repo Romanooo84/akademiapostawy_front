@@ -3,7 +3,7 @@ import css from './projects.module.css';
 import ProjectsRender from "../../components/projects/projectContent/posture";
 import projectsContent from "./projectsContnent";
 import { useState } from 'react';
-import ProjectButtons from '../../components/projects/projectContent/projectButtons/projectButtons';
+import ProjectButtons from '../../components/projects/projectButtons/projectButtons';
 
 const Projects = () => {
   
