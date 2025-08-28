@@ -6,11 +6,11 @@ code{
 }
 
 .contentDiv{
-    width: 700px;
+    width: 650px;
     text-align: justify;
     white-space: pre-line;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     border: 2px solid #f3618e;
     overflow: hidden;
     transition: transform 1s ease-in-out;
@@ -35,6 +35,18 @@ code{
     width: 350px;
     height: 300px;
     object-fit: cover;
+}
+
+@media (max-width: 767px) {
+    .contentDiv{
+        flex-direction: column;
+}
+    .image{
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+}
+
 }
 
 
