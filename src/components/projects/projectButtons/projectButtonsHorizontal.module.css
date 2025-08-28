@@ -1,15 +1,14 @@
 :root {
-  --itemWidth: 300px
-
+  --itemWidth: 250px;
 }
 
-.mainDiv{
+.mainDiv {
   display: flex;
   flex-direction: column;
-  gap:20px
+  gap: 20px;
 }
 
-.buttonsDiv{
+.buttonsDiv {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -21,7 +20,7 @@
   border-radius: 30px;
   margin: 0 auto;
   height: 130px;
-  width: calc( 3 * var(--itemWidth));
+  width: calc(3 * var(--itemWidth));
   overflow: hidden;
   position: relative;
 }
@@ -30,8 +29,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  width:  max-content;
-  transition: transform 1s ease-in-out
+  width: max-content;
+  transition: transform 1s ease-in-out;
 }
 
 .item {
@@ -46,9 +45,24 @@
   text-align: center;
   border: none;
   border-radius: 20px;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-.h1{
+.active {
+  transform: scale(0.95);
+  opacity: 1;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.inactive {
+  transform: scale(0.8);
+  opacity: 0.5;
+  z-index: 1;
+  cursor: default;
+}
+
+.h1 {
   font-size: 20px;
 }
 
@@ -58,14 +72,14 @@
   object-fit: cover;
 }
 
-.navBtn{
+.navBtn {
   border: none;
   cursor: pointer;
   background-color: transparent;
- font-size: 30px;
- transition: transform 0.5s ease-in-out;
+  font-size: 30px;
+  transition: transform 0.5s ease-in-out;
 }
 
-.navBtn:hover{
+.navBtn:hover {
   transform: scale(1.3);
 }
