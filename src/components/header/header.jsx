@@ -1,4 +1,5 @@
 import logo from '../../images/logo.png';
+import HamburgerMenu from './hamburgerMenu/hamburgerManu';
 import css from './header.module.css';
 import { Link, useLocation  } from "react-router-dom"
 import { useEffect, useState } from 'react';
@@ -46,6 +47,9 @@ const Header=()=>{
             </div>
             <div className={css.buttonsDiv}>
                 {buttons}
+            </div>
+            <div className={css.hamburgerMenu}>
+                <HamburgerMenu buttons={buttons}/>
             </div>
         </header>
     )

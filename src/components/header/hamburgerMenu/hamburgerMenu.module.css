@@ -1,0 +1,50 @@
+.menuWrapper {
+  position: relative;
+}
+
+/* Przycisk hamburgera */
+.hamburger {
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+  padding: 10px;
+}
+
+/* Menu domyślnie ukryte */
+.menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: absolute;
+  top: 85px;
+  left: -150px;
+  width: 200px;
+  max-height: 0;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0.2;
+  transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
+  box-shadow: var(--line-box-shadow)
+}
+
+.menu a {
+  text-align: center;
+  width: 150px;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: var(--line-border-bottom);
+}
+
+.menu a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Po otwarciu menu */
+.show {
+  opacity: 1;
+  max-height: 500px; /* wystarczająco dużo, by pomieścić wszystkie linki */
+}
