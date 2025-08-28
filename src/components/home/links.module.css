@@ -46,7 +46,9 @@
 @media (min-width: 768px) and (max-width: 1400px) {
     .mainDiv{
         flex-wrap: wrap;
-        justify-content: space-around
+        justify-content: space-around;
+        
+        
     }
 
     .linkButton{
@@ -63,6 +65,7 @@
       .mainDiv{
         flex-wrap: wrap;
         justify-content: center;
+        margin: 50px 0;
      }
 
         .linkButton{

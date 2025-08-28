@@ -31,3 +31,10 @@
 .relative{
   position: relative
 }
+
+@media (max-width: 767px) {
+  .mainDiv{
+    height: 300px;
+  }
+
+}

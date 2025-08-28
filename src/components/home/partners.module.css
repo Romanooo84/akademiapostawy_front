@@ -43,6 +43,11 @@
 
 /* Telefon */
 @media (max-width: 767px) {
+    .mainDiv{
+        margin-top: 10px;
+        margin-bottom: 0
+    }
+
     .partnersListDiv{
         gap: 10px
     }
