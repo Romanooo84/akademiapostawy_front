@@ -1,11 +1,11 @@
 .mainDiv{
      display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: auto 150px;
     gap: 20px;
     justify-content: space-around;
     position: relative;
-    align-items: flex-start;
+    align-items: center;
 
 }
 
