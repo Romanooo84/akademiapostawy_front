@@ -12,7 +12,7 @@ const SharedLayout = () => {
     const { pathname } = location;
 
  return (
-  <div> 
+  <div className={css.main}> 
     <Header />
     <main>
       <div className={css.mainDiv}>

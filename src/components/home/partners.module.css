@@ -1,5 +1,5 @@
 .mainDiv{
-    margin: 100px 100px;
+    margin: 100px 0;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -33,4 +33,29 @@
     width: 300px;
     height: 300px;
     object-fit: cover;
+}
+
+@media (min-width: 768px) and (max-width: 1400px) {
+    .partnersListDiv{
+        gap: 20px
+    }
+}
+
+/* Telefon */
+@media (max-width: 767px) {
+    .partnersListDiv{
+        gap: 10px
+    }
+
+    .partnerDiv{
+    width: 150px;
+    text-align: center;
+}
+
+    .partnerImg{
+    width:  100px;
+    height: 100px;
+    object-fit: cover;
+}
+
 }

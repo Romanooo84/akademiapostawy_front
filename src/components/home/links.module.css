@@ -1,8 +1,9 @@
 .mainDiv{
-    margin: 100px 100px;
+    margin: 100px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap:30px;
     
 }
 
@@ -39,4 +40,37 @@
     padding: 20px;
     text-align: justify;
     cursor: pointer;
+}
+
+
+@media (min-width: 768px) and (max-width: 1400px) {
+    .mainDiv{
+        flex-wrap: wrap;
+        justify-content: space-around
+    }
+
+    .linkButton{
+        width: 300px;
+    }
+    .picture{
+    width: 300px;
+    height: 300px;
+    }
+}
+
+/* Telefon */
+@media (max-width: 767px) {
+      .mainDiv{
+        flex-wrap: wrap;
+        justify-content: center;
+     }
+
+        .linkButton{
+            width: 200px;
+        }
+        .picture{
+        width: 200px;
+        height: 200px;
+        }
+
 }

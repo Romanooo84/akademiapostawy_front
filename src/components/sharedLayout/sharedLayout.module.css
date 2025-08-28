@@ -1,4 +1,23 @@
 .mainDiv{
-    margin-top: 200px;
+    margin-top: 130px;
     min-height: 55vh;
+   
+}
+
+.main{
+    margin: 0 auto;
+     width: 1440px;
+}
+
+@media (min-width: 768px) and (max-width: 1400px) {
+    .main{
+        width: 760px;
+}
+}
+
+/* Telefon */
+@media (max-width: 767px) {
+    .main{
+        width: 320px;
+}
 }

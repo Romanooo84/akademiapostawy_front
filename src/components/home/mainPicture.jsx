@@ -28,15 +28,17 @@ const MainPicture = () => {
   }, [pictureList.length]);
 
   return (
-    <div className={css.mainDiv}>
-      {pictureList.map((pic, index) => (
-        <img
-          key={index}
-          src={pic}
-          alt={`Slajd ${index + 1}`}
-          className={`${css.imageSlide} ${index === currentIndex && loaded ? css.active : ''}`}
-        />
-      ))}
+    <div className={css.relative}>
+      <div className={css.mainDiv}>
+        {pictureList.map((pic, index) => (
+          <img
+            key={index}
+            src={pic}
+            alt={`Slajd ${index + 1}`}
+            className={`${css.imageSlide} ${index === currentIndex && loaded ? css.active : ''}`}
+          />
+        ))}
+      </div>
     </div>
   );
 };

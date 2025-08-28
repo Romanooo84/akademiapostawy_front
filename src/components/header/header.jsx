@@ -9,31 +9,33 @@ const Header=()=>{
     const [buttons, setButtons] = useState()
     const location = useLocation()
 
-     useEffect(()=>{
-        const buttonsList = ['blog', 'Projekty', 'Fizjomemo', 'Filmy', 'Kontakt']
-        const path=location.pathname.split('/')
-        const pageTitle = path[path.length-1]
-        const markup=buttonsList.map((button, index)=>{
-            if (button!==pageTitle.toLowerCase()) {
-                let upperLetter=button.charAt(0).toUpperCase()+button.slice(1)
-                return (
-                    <Link key={index} to={`/${button}`}>
+     useEffect(() => {
+    const buttonsList = ['home', 'blog', 'Projekty', 'Fizjomemo', 'Filmy', 'Kontakt'];
+    
+    const path = location.pathname.split('/');
+    const pageTitle = path[path.length - 1] || 'home'; // dla '/' domyślnie 'home'
+
+    const markup = buttonsList
+        .filter(button => {
+            const buttonName = button.toLowerCase();
+            // Jeśli jesteśmy na tej stronie — pomijamy ją
+            return buttonName !== pageTitle.toLowerCase();
+        })
+        .map((button, index) => {
+            const upperLetter = button.charAt(0).toUpperCase() + button.slice(1);
+            const pathName = button.toLowerCase() === 'home' ? '/' : `/${button.toLowerCase()}`;
+
+            return (
+                <Link key={index} to={pathName}>
                     <button className={css.buttons}>{upperLetter}</button>
-                    </Link> 
-                )
-            }
-            else {
-                let upperLetter=button.charAt(0).toUpperCase()+button.slice(1)
-                return (
-                    <Link key={index} to={`/${button}`}>
-                    <button className={css.buttons}>{upperLetter}</button>
-                    </Link> 
-                )
-                
-            }
-            })
-        setButtons(markup)
-    }, [location])
+                </Link>
+            );
+        });
+
+    setButtons(markup);
+}, [location]);
+
+
 
     return(
         <header className={css.mainDiv}>
