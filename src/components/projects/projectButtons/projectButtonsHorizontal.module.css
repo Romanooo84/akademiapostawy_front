@@ -16,9 +16,11 @@
 }
 
 .wrapper {
+  display: flex;
+  align-items: center;
   border-radius: 30px;
   margin: 0 auto;
-  height: 200px;
+  height: 130px;
   width: calc( 3 * var(--itemWidth));
   overflow: hidden;
   position: relative;

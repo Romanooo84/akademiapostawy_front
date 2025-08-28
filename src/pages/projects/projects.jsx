@@ -13,7 +13,7 @@ const Projects = () => {
 
   return (
     <div className={css.mainDiv}>
-      <div className={css.tabAndBoxDiv}>
+      <div >{/*className={css.tabAndBoxDiv}*/}
         <ProjectButtonsHorizontal projectsContent={projectsContent} setActiveTab={setActiveTab}/>
       </div>
       <div className={css.sectionsDiv}>

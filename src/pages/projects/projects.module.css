@@ -18,9 +18,11 @@
 .tabAndBoxDiv{
     z-index: 1;
     position: sticky;
-    top: 200px;
-
+    top: 140px;
+    width: 1200px;
+    background-color: white;
 }
+
 
 .tabNav{ 
     display: flex;

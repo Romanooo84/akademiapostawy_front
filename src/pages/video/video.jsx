@@ -53,9 +53,14 @@ const Video = () => {
         );
       });
       setVideoRendered(markup);
-      setIsLoading(false)
-    }
-  }, [data]);
+        const timeout = setTimeout(() => {
+          setIsLoading(false);
+        }, 1000); // 1000 ms = 1 sekunda
+
+        // Czyszczenie timera, gdyby komponent się odmontował wcześniej
+        return () => clearTimeout(timeout);
+        }
+    }, [data]);
 
   if (error) {
     return <p>Błąd: {error}</p>;
