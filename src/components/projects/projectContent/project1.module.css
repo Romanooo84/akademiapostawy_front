@@ -59,4 +59,25 @@
   font-weight: 500;
 }
 
+@media (min-width: 768px) and (max-width: 1100px) {
+  .mainDiv {
+        width: 640px;
+        padding: 30px;
+    }
+
+}
+
+@media (max-width: 768px){
+  .mainDiv {
+        width: 290px;
+        padding: 10px;
+    }
+
+    .header1{
+  font-size: 25px;
+}
+
+}
+
+
 
