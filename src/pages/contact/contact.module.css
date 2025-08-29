@@ -1,0 +1,11 @@
+.contactsMainDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.img{
+    width: 200px;
+    height: 100%
+}
