@@ -46,7 +46,10 @@ const Video = () => {
                     className={css.iframe}
                   ></iframe>
                 </div>
-                <p>{video.description}</p>
+                <div className={css.descriptionDiv}>
+                  <p>{video.description}</p>
+                </div>
+              
             </div>
             <div className={css.line}></div>
           </div>

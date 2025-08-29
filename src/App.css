@@ -4,6 +4,7 @@
   --secondary-color: #3f1f9d;
   --article-color:black;
   --background-color: #656592;
+  --line-color: #fb66a1;
   --line-border-bottom: 3px solid #f3618e;
   --line-box-shadow: -1px 5px 9px 0px rgb(189 106 177);
   --main-background: linear-gradient(90deg, var(--background-color) 0%, white 10%, white 90%, var(--background-color) 100%);
@@ -58,3 +59,4 @@ li{
     font-size: 18px;
     margin: 0;
 }
+

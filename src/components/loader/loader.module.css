@@ -90,3 +90,15 @@ body {
     transform: scale(1);
   }
 }
+
+@media (max-width: 767px) {
+  .loader{
+    margin-left: 40px;
+  }
+  .dot {
+  width: 23px;
+  height: 23px;
+  margin-left: 5px;
+}
+  
+}
