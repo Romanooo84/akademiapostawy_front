@@ -1,11 +1,104 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+}
+
 .contactsMainDiv{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 100px;
+    align-items: center;
 }
 
+.mainDiv{
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    padding-bottom: 30px;
+    
+}
+
+.missionDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 20px   ;
+    align-items: center;
+    text-align: justify;
+    width: 1000px;
+    padding-bottom: 50px;
+    border-bottom: var(--line-border-bottom);
+}
+
+.headerText{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header3{
+    margin: 0;
+}
+
+.descriptionAndContactDiv{
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.textDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
 .img{
-    width: 200px;
-    height: 100%
+    width: 500px;
+    height: 650px
+}
+
+@media (min-width: 768px) and (max-width: 1400px) {
+    .missionDiv{
+    width: 700px
+}
+  .mainDiv {
+    display: block; /* wyłączamy flex */
+  }
+
+  .textDiv{
+    margin-bottom: 50px;
+  }
+    .img{
+    float: left;         /* tekst owija obrazek */
+    margin: 0 20px 20px 0; /* odstęp od tekstu */
+    width: 400px;
+    height: 520px
+}
+ .descriptionAndContactDiv {
+    display: block; /* normalny przepływ tekstu */
+  }
+
+}
+
+@media (max-width: 768px){
+    .missionDiv{
+        width: 310px
+    }
+
+    .mainDiv {
+        flex-direction: column;
+    }
+    .img{
+    width: 300px;
+    height: 390px
+}
+
+ .descriptionAndContactDiv {
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+  }
 }
