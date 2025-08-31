@@ -14,7 +14,7 @@ function App() {
         <Route path="projekty" element={<Projects />} />
         <Route path="fizjomemo" element={<Video />} />
         <Route path="filmy" element={<Video />} />
-        <Route path="kontakt" element={<Contact />} />
+        <Route path="o nas" element={<Contact />} />
       </Route>
     </Routes>
   );

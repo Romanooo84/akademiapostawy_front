@@ -11,7 +11,6 @@ code{
     white-space: pre-line;
     display: flex;
     gap: 10px;
-    border: 2px solid #f3618e;
     overflow: hidden;
     transition: transform 1s ease-in-out;
     padding: 10px;

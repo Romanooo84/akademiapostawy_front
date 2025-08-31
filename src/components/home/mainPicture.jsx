@@ -1,15 +1,8 @@
 import { useEffect, useState } from 'react';
 import css from './mainPicture.module.css';
-
-import picture1 from '../../images/przedszkole.jpg';
-import picture2 from '../../images/zajecia.jpg';
-import picture3 from '../../images/skolioza1.jpg';
-import picture4 from '../../images/skolioza2.jpg';
-import picture5 from '../../images/skolioza3.jpg';
-import picture6 from '../../images/wadypostawy.jpg';
+import pictureList from './mainPictureList';
 
 const MainPicture = () => {
-  const pictureList = [picture1, picture2, picture3, picture4, picture5, picture6];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
@@ -19,7 +12,7 @@ const MainPicture = () => {
 
     const interval = setInterval(() => {
       setCurrentIndex(prevIndex => (prevIndex + 1) % pictureList.length);
-    }, 8000); // co 10 sek
+    }, 20000); // co 10 sek
 
     return () => {
       clearTimeout(timeout);
@@ -30,14 +23,25 @@ const MainPicture = () => {
   return (
     <div className={css.relative}>
       <div className={css.mainDiv}>
-        {pictureList.map((pic, index) => (
-          <img
-            key={index}
-            src={pic}
-            alt={`Slajd ${index + 1}`}
-            className={`${css.imageSlide} ${index === currentIndex && loaded ? css.active : ''}`}
-          />
-        ))}
+   {pictureList.map((pic, index) => {
+  console.log(pic);
+          return (  
+            <div  
+              className={`${css.imageSlide} ${index === currentIndex && loaded ? css.active : ''}`} 
+              key={index}
+            >
+              <div className={css.caption} >
+                <h1 className={css.headaer}>{pic.title}</h1>
+                <p className={css.paragraph}>{pic.caption}</p>
+              </div>
+              <img
+                className={css.image}
+                src={pic.src}
+                alt={`Slajd ${index + 1}`}
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
