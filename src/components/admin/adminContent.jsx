@@ -38,6 +38,7 @@ const AdminContent = ({ data, dataType, startAddContent, setStartAddContent }) =
     if (!file) return;
     setImageFile(file);
     setPreview(URL.createObjectURL(file)); // podgląd
+    console.log(imageFile); // sprawdzic czy to potrzebne 
   };
 
   useEffect(() => {
