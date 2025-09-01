@@ -11,7 +11,7 @@ const Header=()=>{
     const location = useLocation()
 
      useEffect(() => {
-    const buttonsList = ['home', 'blog', 'Projekty', 'Produkty', 'Filmy', 'O nas'];
+    const buttonsList = ['home', 'blog', 'Projekty', 'Produkty', 'Filmy', 'O nas', 'adminDorota'];
     
     const path = location.pathname.split('/');
     const pageTitle = path[path.length - 1] || 'home'; // dla '/' domyślnie 'home'
