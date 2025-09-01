@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import link from '../../link';
+import AdminContent from "../../components/admin/adminContent";
 
 const Admin = () => {
 
 
 const [data, setDdata] = useState([]);
+const [dataType, setDataType] = useState('');
+const [startAddContent, setStartAddContent] = useState(false);
 
  useEffect(() => {
    console.log('Component mounted');
@@ -12,6 +15,7 @@ const [data, setDdata] = useState([]);
 
 
   const fetchData = async (lastPart) => {
+    console.log('Pobieram dane dla:', lastPart);
       try {
         const response = await fetch(`${link}${lastPart}`);
         if (!response.ok) throw new Error('Błąd pobierania danych');
@@ -23,24 +27,11 @@ const [data, setDdata] = useState([]);
     };
 
   const onClick = (buttonID) => {
-    console.log(buttonID);
+    setDataType(buttonID);
     const lastPart=buttonID;
     fetchData(lastPart);
+    setStartAddContent(false); // ukryj formularz przy zmianie typu danych
     };
-
-    const markup = data.map((item, index) => {
-        console.log(item);
-      return (
-        <>
-        <div key={index}>
-            <p>{item.title}</p>
-            <p>{item.author}</p>
-            <p>{item.content}</p>
-            <img src={item.img} alt="Blog" style={{ width: '200px', height: 'auto' }} />
-        </div>
-        <button>X skasuj</button>
-        </>
-    )})
 
 return (
     <>
@@ -49,7 +40,7 @@ return (
         <button onClick={() => onClick('projectscontent')}>pobierz projekty</button>
         <button onClick={() => onClick('getmainpicturelist')}>pobierz zdjęcia na główną</button>
     </div>
-    <div>{markup}</div>
+    {data.length >0 && <AdminContent data={data}  dataType={dataType} setStartAddContent={setStartAddContent} startAddContent={startAddContent}/>}
 
     </>
 
