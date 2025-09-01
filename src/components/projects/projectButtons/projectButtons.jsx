@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
 import css from "./projectButtons.module.css";
 
-const ProjectButtons = ({projectsContent, setActiveTab}) => {
+const ProjectButtons = ({projectContent, setActiveTab}) => {
   const carouselRef = useRef(null);
-  const total = projectsContent.length
+  const total = projectContent.length
   const [currentIndex, setCurrentIndex] = useState(1);
   const itemHeight = 70 + 10; // wysokość elementu + gap
 
@@ -14,7 +14,7 @@ const ProjectButtons = ({projectsContent, setActiveTab}) => {
 };
 
   // duplikacja listy dla płynnego infinite scroll
-  const loopedProjects = [...projectsContent, ...projectsContent, ...projectsContent]
+  const loopedProjects = [...projectContent, ...projectContent, ...projectContent]
 
 const move = (direction) => {
   if (!carouselRef.current) return;

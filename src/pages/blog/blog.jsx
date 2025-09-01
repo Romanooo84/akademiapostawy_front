@@ -1,23 +1,43 @@
 import Modal from '../../components/blog/modal';
-import blogsContent from  './blogsContnent';
 import BlogShortText from '../../components/blog/blogShortText';
-import { useState } from "react";
+import link from '../../link';
+import { useState, useEffect } from "react";
 import css from "./blog.module.css";
 
 const Blog = () => {
 
+  const [blogList, setBlogList] = useState([]);
   const [selectedBlog, setSelectedBlog] = useState(null);
+  
+     useEffect(() => {
+      const fetchBlog = async () => {
+        try {
+          const response = await fetch(`${link}getblogcontent`);
+          if (!response.ok) throw new Error('Błąd pobierania danych');
+          const data = await response.json();
+          setBlogList(data);
+        } catch (error) {
+          console.error('Nie udało się pobrać listy:', error);
+        }
+      };
+  
+      fetchBlog();
+    }, []);
 
 
-  const shortContent= BlogShortText( {blogsContent, setSelectedBlog} );
+  const shortContent= BlogShortText( {blogList, setSelectedBlog} );
   const modal=Modal({ setSelectedBlog, selectedBlog });
 
     return (
-    <div className={css.mainDiv}>
-      {shortContent}
-      {selectedBlog && modal}
-    </div>
-  );
+  <>
+    {blogList.length > 0 && (
+      <div className={css.mainDiv}>
+        {shortContent}
+        {selectedBlog && modal}
+      </div>
+    )}
+  </>
+);
 };
 
 export default Blog;

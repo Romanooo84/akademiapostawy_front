@@ -2,13 +2,13 @@ import css from "./blog.module.css";
 import ReactMarkdown from 'react-markdown'
 
 
-const BlogShortText = ( {blogsContent, setSelectedBlog }) => {
+const BlogShortText = ( {blogList, setSelectedBlog }) => {
 
     const handleOpenModal = (blog) => {
         setSelectedBlog(blog);
     };
 
-    const markup = blogsContent.map((blog, index) => {
+    const markup = blogList.map((blog, index) => {
       let content = blog.content.trim();
       const hashIndex = content.indexOf('#');
 

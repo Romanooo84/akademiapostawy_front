@@ -4,6 +4,7 @@ import Video from "./pages//video/video";
 import Blog from "./pages/blog/blog.jsx";
 import Projects from "./pages/projects/projects.jsx";
 import Contact from "./pages/contact/contact.jsx";
+import Admin from "./pages/admin/admin.jsx";
 import './App.css'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="fizjomemo" element={<Video />} />
         <Route path="filmy" element={<Video />} />
         <Route path="o nas" element={<Contact />} />
+        <Route path="adminDorota" element={<Admin />} />
       </Route>
     </Routes>
   );

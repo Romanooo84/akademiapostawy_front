@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import css from './project1.module.css';
 
-const ProjectsRender = ({ projectsContent, activeTab }) => {
+const ProjectsRender = ({ projectContent, activeTab }) => {
 
    const markdownComponents = {
     h1: ({  ...props }) => <h1 className={css.header1} {...props} />,
@@ -13,7 +13,7 @@ const ProjectsRender = ({ projectsContent, activeTab }) => {
 
   return (
     <>
-      {projectsContent.map((project, key) => {
+      {projectContent.map((project, key) => {
         const id = `section${key + 1}`;
         if (id !== activeTab) return null; // renderujemy tylko aktywny element
         return (

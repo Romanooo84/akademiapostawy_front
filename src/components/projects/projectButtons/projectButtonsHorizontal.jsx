@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import css from './projectButtonsHorizontal.module.css';
 
-const ProjectButtonsHorizontal = ({ projectsContent, setActiveTab }) => {
+const ProjectButtonsHorizontal = ({ projectContent, setActiveTab }) => {
   const carouselRef = useRef(null);
-  const total = projectsContent.length;
+  const total = projectContent.length;
   const [currentIndex, setCurrentIndex] = useState(1);
   const [itemWidth, setItemWidth] = useState(300); // domyślna wartość zapasowa
 
@@ -19,7 +19,8 @@ const ProjectButtonsHorizontal = ({ projectsContent, setActiveTab }) => {
     if (section) section.scrollIntoView({ behavior: "smooth" });
   };
 
-  const loopedProjects = [...projectsContent, ...projectsContent, ...projectsContent];
+  const loopedProjects = [...projectContent, ...projectContent, ...projectContent];
+
 
   const move = (direction) => {
     if (!carouselRef.current) return;
