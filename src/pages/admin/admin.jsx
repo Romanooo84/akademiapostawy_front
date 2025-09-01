@@ -6,6 +6,10 @@ const Admin = () => {
 
 const [data, setDdata] = useState([]);
 
+ useEffect(() => {
+   console.log('Component mounted');
+  }, []);
+
 
   const fetchData = async (lastPart) => {
       try {
