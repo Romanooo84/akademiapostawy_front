@@ -11,6 +11,7 @@ const AdminContent = ({ data, dataType, startAddContent, setStartAddContent }) =
 
   const onClick = async (e) => {
     const { title } = e.target.dataset;
+    console.log(`${link}${dataType}`)
     console.log('Kasuję:', title);
 
     try {

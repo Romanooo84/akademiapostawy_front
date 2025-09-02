@@ -1,5 +1,6 @@
 import link from '../../link';
 import { useState } from 'react';
+import css from './addingContent.module.css';
 
 const AddContent = ({ preview, handleFileChange, dataType }) => {
     const [title, setTitle] = useState('');
@@ -14,7 +15,7 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
 
     const onClick = async () => {
         const formData = new FormData();
-        formData.append('title', title);
+        formData.append('title', `# ${title}`);
         formData.append('text', text);
         formData.append('dataType', dataType);
         if (file) formData.append('image', file);
@@ -42,14 +43,16 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     placeholder="Wpisz tytuł"
+                    className={css.titleInput}
                 />
             </div>
             <div>
                 <p>Tekst</p>
-                <input
+                <textarea
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     placeholder="Wpisz tekst"
+                    className={css.textInput}
                 />
             </div>
             <div>

@@ -1,3 +1,4 @@
+
 import css from "./modal.module.css";
 import ReactMarkdown from 'react-markdown'
 
@@ -18,6 +19,8 @@ const Modal= ({ setSelectedBlog, selectedBlog}) => {
   p: ({  ...props }) => <p className={css.paragraph} {...props} />,
   li: ({  ...props }) => <li className={css.li} {...props} />,
 };
+
+
 
 
     return(

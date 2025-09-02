@@ -15,6 +15,7 @@ const Blog = () => {
           const response = await fetch(`${link}getblogcontent`);
           if (!response.ok) throw new Error('Błąd pobierania danych');
           const data = await response.json();
+          console.log('Pobrano listę blogów:', data);
           setBlogList(data);
         } catch (error) {
           console.error('Nie udało się pobrać listy:', error);
@@ -27,6 +28,8 @@ const Blog = () => {
 
   const shortContent= BlogShortText( {blogList, setSelectedBlog} );
   const modal=Modal({ setSelectedBlog, selectedBlog });
+
+  useEffect(() => {console.log(selectedBlog)}, [selectedBlog]);
 
     return (
   <>
