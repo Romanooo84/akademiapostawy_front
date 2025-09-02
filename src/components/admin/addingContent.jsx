@@ -6,9 +6,8 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
     const [file, setFile] = useState(null);
-
-    // nowe dynamiczne pola
     const [extraFields, setExtraFields] = useState([]);
+    const [successMessage, setSuccessMessage] = useState('');
 
     const onFileChange = (e) => {
         const selectedFile = e.target.files[0];
@@ -31,7 +30,6 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
     };
 
     const onClick = async () => {
-        // budujemy pełny tekst z extraFields
         let fullText = text;
         extraFields.forEach((field) => {
             if (field.type === 'header') {
@@ -59,70 +57,82 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
 
             const result = await res.json();
             console.log('Zapisano:', result);
+
+            // czyścimy pola i pokazujemy komunikat
+            setTitle('');
+            setText('');
+            setFile(null);
+            setExtraFields([]);
+            setSuccessMessage('Dane zapisane pomyślnie.');
         } catch (err) {
             console.error('Wystąpił błąd:', err);
+            setSuccessMessage('Wystąpił błąd podczas zapisu.');
         }
     };
 
     return (
         <div style={{ marginTop: 20, border: '1px solid #ccc', padding: 10 }}>
-            <div>
-                <p>Tytuł</p>
-                <input
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    placeholder="Wpisz tytuł"
-                    className={css.titleInput}
-                />
-            </div>
-            <div>
-                <p>Tekst</p>
-                <textarea
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
-                    placeholder="Wpisz tekst"
-                    className={css.textInput}
-                />
-            </div>
+            {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
 
-            {/* dodatkowe pola */}
-            {extraFields.map((field, index) => (
-                <div key={index}>
-                    {field.type === 'header' ? (
+            {!successMessage && (
+                <>
+                    <div>
+                        <p>Tytuł</p>
                         <input
-                            type="text"
-                            value={field.value}
-                            onChange={(e) => handleExtraChange(index, e.target.value)}
-                            placeholder="Dodatkowy nagłówek"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            placeholder="Wpisz tytuł"
                             className={css.titleInput}
                         />
-                    ) : (
+                    </div>
+                    <div>
+                        <p>Tekst</p>
                         <textarea
-                            value={field.value}
-                            onChange={(e) => handleExtraChange(index, e.target.value)}
-                            placeholder="Dodatkowy tekst"
+                            value={text}
+                            onChange={(e) => setText(e.target.value)}
+                            placeholder="Wpisz tekst"
                             className={css.textInput}
                         />
-                    )}
-                </div>
-            ))}
+                    </div>
 
-            {/* przyciski do dodawania nowych pól */}
-            <div style={{ marginTop: 10 }}>
-                <button type="button" onClick={addHeaderField}>
-                    Dodaj nagłówek
-                </button>
-                <button type="button" onClick={addTextField} style={{ marginLeft: 10 }}>
-                    Dodaj tekst
-                </button>
-            </div>
+                    {extraFields.map((field, index) => (
+                        <div key={index}>
+                            {field.type === 'header' ? (
+                                <input
+                                    type="text"
+                                    value={field.value}
+                                    onChange={(e) => handleExtraChange(index, e.target.value)}
+                                    placeholder="Dodatkowy nagłówek"
+                                    className={css.titleInput}
+                                />
+                            ) : (
+                                <textarea
+                                    value={field.value}
+                                    onChange={(e) => handleExtraChange(index, e.target.value)}
+                                    placeholder="Dodatkowy tekst"
+                                    className={css.textInput}
+                                />
+                            )}
+                        </div>
+                    ))}
 
-            <div style={{ marginTop: 15 }}>
-                <p>Zdjęcie</p>
-                <input type="file" accept="image/*" onChange={onFileChange} />
-                {preview && <img src={preview} alt="Podgląd" style={{ width: 200, marginTop: 10 }} />}
-            </div>
-            <button id={dataType} onClick={onClick} style={{ marginTop: 15 }}>Zapisz</button>
+                    <div style={{ marginTop: 10 }}>
+                        <button type="button" onClick={addHeaderField}>
+                            Dodaj nagłówek
+                        </button>
+                        <button type="button" onClick={addTextField} style={{ marginLeft: 10 }}>
+                            Dodaj tekst
+                        </button>
+                    </div>
+
+                    <div style={{ marginTop: 15 }}>
+                        <p>Zdjęcie</p>
+                        <input type="file" accept="image/*" onChange={onFileChange} />
+                        {preview && <img src={preview} alt="Podgląd" style={{ width: 200, marginTop: 10 }} />}
+                    </div>
+                    <button id={dataType} onClick={onClick} style={{ marginTop: 15 }}>Zapisz</button>
+                </>
+            )}
         </div>
     );
 };
