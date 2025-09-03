@@ -18,7 +18,7 @@ const ProjectsRender = ({ projectContent, activeTab }) => {
         if (id !== activeTab) return null; // renderujemy tylko aktywny element
         return (
           <div className={css.mainDiv} key={key} id={id}>
-            <h1 className={css.header1}>{project.title}</h1>
+            <ReactMarkdown components={markdownComponents}>{project.title}</ReactMarkdown>
             <div className={css.text}>
               <ReactMarkdown components={markdownComponents}>{project.content}</ReactMarkdown>
             </div>
