@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import css from "./projectButtons.module.css";
+import ReactMarkdown from 'react-markdown';
 
 const ProjectButtons = ({projectContent, setActiveTab}) => {
   const carouselRef = useRef(null);
@@ -79,7 +80,7 @@ const move = (direction) => {
                     transition: "transform 0.5s ease-in-out, opacity 0.5s ease-in-out"
                   }}
                 >
-                  <h1 className={css.h1}>{project.title}</h1>
+                  <ReactMarkdown className={css.h1}>{project.title}</ReactMarkdown>
                 </button>
               );
             })}
