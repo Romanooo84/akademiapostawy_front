@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import link from '../../link';
 import AdminContent from "../../components/admin/adminContent";
+import css from './admin.module.css'
 
 const Admin = () => {
 
@@ -35,10 +36,10 @@ const [startAddContent, setStartAddContent] = useState(false);
 
 return (
     <>
-    <div>  
-        <button onClick={() => onClick('getblogcontent')}>pobierz blog</button>
-        <button onClick={() => onClick('projectscontent')}>pobierz projekty</button>
-        <button onClick={() => onClick('getmainpicturelist')}>pobierz zdjęcia na główną</button>
+    <div className={css.buttonContainer}>
+        <button className={css.button} onClick={() => onClick('getblogcontent')}>pobierz blog</button>
+        <button className={css.button} onClick={() => onClick('projectscontent')}>pobierz projekty</button>
+        <button className={css.button} onClick={() => onClick('getmainpicturelist')}>pobierz zdjęcia na główną</button>
     </div>
     {data.length >0 && <AdminContent data={data}  dataType={dataType} setStartAddContent={setStartAddContent} startAddContent={startAddContent}/>}
 

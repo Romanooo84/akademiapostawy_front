@@ -2,16 +2,17 @@ import { useState, useEffect } from 'react';
 import AddContent from './addingContent';
 import DownloadedContents from './downloadedContents';
 import link from '../../link';
+import css from './adminContent.module.css';
 
 const AdminContent = ({ data, dataType, startAddContent, setStartAddContent }) => {
   const [imageFile, setImageFile] = useState(null);
   const [preview, setPreview] = useState(null);
-  const [entries, setEntries] = useState(data); // lista wpisów
+  const [entries, setEntries] = useState(data);
   
 
   const onClick = async (e) => {
     const { title } = e.target.dataset;
-    console.log(`${link}${dataType}`)
+    console.log(`${link}${dataType}`) 
     console.log('Kasuję:', title);
 
     try {
@@ -52,7 +53,7 @@ const AdminContent = ({ data, dataType, startAddContent, setStartAddContent }) =
 
   return (
     <div>
-      <button onClick={addContent}>{startAddContent ? 'Anuluj' : 'Dodaj'}</button>
+      <button  className={css.button} onClick={addContent}>{startAddContent ? 'Anuluj' : 'Dodaj'}</button>
 
       {/* Formularz dodawania */}
       {startAddContent && <AddContent handleFileChange={handleFileChange} preview={preview} dataType={dataType}/>}

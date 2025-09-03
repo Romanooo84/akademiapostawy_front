@@ -71,7 +71,7 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
     };
 
     return (
-        <div style={{ marginTop: 20, border: '1px solid #ccc', padding: 10 }}>
+        <div style={{ marginTop: 20, border: '3px solid #eb549aff', padding: 10 }}>
             {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
 
             {!successMessage && (
