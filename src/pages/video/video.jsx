@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import css from './video.module.css'
 import Loader from '../../components/loader/loader';
+import link from '../../link';
 
 const Video = () => {
   const [data, setData] = useState(null);
@@ -18,7 +19,8 @@ const Video = () => {
   };
 
   useEffect(() => {
-    fetch('https://srv80578.seohost.com.pl/myvideolist')
+    console.log(`${link}myvideolist`)
+    fetch(`${link}myvideolist`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Server error: ${res.status}`);
