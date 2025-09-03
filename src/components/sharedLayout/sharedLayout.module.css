@@ -24,7 +24,7 @@
   padding: 12px 18px;
   width: 100%;
   height: 95px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: -3px 0px 19px 0px var(--line-color);
   white-space: nowrap;
   transition: transform 0.3s ease, opacity 0.3s ease;
   transform: translateX(100%); /* domyślnie schowany */
@@ -38,7 +38,7 @@
 }
 
 .floatingButton {
-  background: #007bff;
+  background: #103d6d;
   display: flex;
   flex-direction: row ;
   align-items: center;
@@ -51,8 +51,9 @@
   border-radius: 50% 0 0 50%;
   padding: 10px 14px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: -4px -2px 16px 0px var(--line-color);
   z-index: 100;
+  transition: border-radius 0.3s ease;
 }
 
 .floatingButton.open{

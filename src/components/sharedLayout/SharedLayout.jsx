@@ -4,7 +4,7 @@ import Home from '../../pages/home/home'; // Importing Home component
 import css from './sharedLayout.module.css'
 import { Outlet, useLocation  } from "react-router-dom";
 import { FaEnvelope, FaChevronLeft,FaChevronRight  } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 // SharedLayout component that includes Header, Footer, and Outlet for nested routes
@@ -13,11 +13,17 @@ const SharedLayout = () => {
     const location = useLocation();
     const { pathname } = location;
     const [open, setOpen] = useState(false);
+    const [delayedOpen, setDelayedOpen] = useState(false);
 
-    const onClick=() => {
-      console.log('start') 
-      setOpen(!open)
+    useEffect(() => {
+    let timer;
+    if (open) {
+      timer = setTimeout(() => setDelayedOpen(true), 30); // po 1s
+    } else {
+      setDelayedOpen(false); // reset od razu po zamknięciu
     }
+    return () => clearTimeout(timer);
+  }, [open]);
 
  return (
   <div className={css.main}> 
@@ -36,13 +42,13 @@ const SharedLayout = () => {
         </div>
 
         <button
-          className={`${css.floatingButton} ${open ? css.open : ""}`}
-          onClick={onClick}
+          className={`${css.floatingButton} ${delayedOpen ? css.open : ""}`}
+          onClick={() => setOpen(!open)}
         >
           {open ? <FaChevronRight /> : <FaChevronLeft />}
           <FaEnvelope />
-      </button>
-</div>
+        </button>
+    </div>
 
   </div>
 );
