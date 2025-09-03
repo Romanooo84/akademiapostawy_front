@@ -3,6 +3,8 @@ import Footer from "../footer/footer"
 import Home from '../../pages/home/home'; // Importing Home component
 import css from './sharedLayout.module.css'
 import { Outlet, useLocation  } from "react-router-dom";
+import { FaEnvelope, FaChevronLeft,FaChevronRight  } from "react-icons/fa";
+import { useState } from "react";
 
 
 // SharedLayout component that includes Header, Footer, and Outlet for nested routes
@@ -10,6 +12,12 @@ import { Outlet, useLocation  } from "react-router-dom";
 const SharedLayout = () => {
     const location = useLocation();
     const { pathname } = location;
+    const [open, setOpen] = useState(false);
+
+    const onClick=() => {
+      console.log('start') 
+      setOpen(!open)
+    }
 
  return (
   <div className={css.main}> 
@@ -20,6 +28,22 @@ const SharedLayout = () => {
       </div>
     </main>
     <Footer />
+
+     <div className={css.contactWrapper}>
+        <div className={`${css.contactPanel} ${open ? css.open : ""}`}>
+          <p>📞 +48 123 456 789</p>
+          <p>✉ kontakt@example.com</p>
+        </div>
+
+        <button
+          className={`${css.floatingButton} ${open ? css.open : ""}`}
+          onClick={onClick}
+        >
+          {open ? <FaChevronRight /> : <FaChevronLeft />}
+          <FaEnvelope />
+      </button>
+</div>
+
   </div>
 );
 
