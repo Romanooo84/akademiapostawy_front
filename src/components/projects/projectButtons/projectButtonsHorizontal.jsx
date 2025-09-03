@@ -22,6 +22,10 @@ const ProjectButtonsHorizontal = ({ projectContent, setActiveTab }) => {
 
   const loopedProjects = [...projectContent, ...projectContent, ...projectContent];
 
+     const markdownComponents = {
+      h1: ({  ...props }) => <h1 className={css.h1} {...props} />,
+    };
+
 
   const move = (direction) => {
     if (!carouselRef.current) return;
@@ -70,7 +74,7 @@ const ProjectButtonsHorizontal = ({ projectContent, setActiveTab }) => {
                 className={`${css.item} ${isActive ? css.active : css.inactive}`}
                 onClick={isActive ? () => handleClick(idx % total) : undefined}
               >
-                <ReactMarkdown>{project.title}</ReactMarkdown>
+                <ReactMarkdown components={markdownComponents}>{project.title}</ReactMarkdown>
               </button>
             );
           })}
