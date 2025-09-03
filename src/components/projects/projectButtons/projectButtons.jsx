@@ -80,7 +80,7 @@ const move = (direction) => {
                     transition: "transform 0.5s ease-in-out, opacity 0.5s ease-in-out"
                   }}
                 >
-                  <ReactMarkdown className={css.h1}>{project.title}</ReactMarkdown>
+                  <ReactMarkdown>{project.title}</ReactMarkdown>
                 </button>
               );
             })}

@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import css from './projectButtonsHorizontal.module.css';
+import ReactMarkdown from 'react-markdown';
 
 const ProjectButtonsHorizontal = ({ projectContent, setActiveTab }) => {
   const carouselRef = useRef(null);
@@ -69,7 +70,7 @@ const ProjectButtonsHorizontal = ({ projectContent, setActiveTab }) => {
                 className={`${css.item} ${isActive ? css.active : css.inactive}`}
                 onClick={isActive ? () => handleClick(idx % total) : undefined}
               >
-                <h1 className={css.h1}>{project.title}</h1>
+                <ReactMarkdown>{project.title}</ReactMarkdown>
               </button>
             );
           })}
