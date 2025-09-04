@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import css from './mainPicture.module.css';
 import link from '../../link.js';
+import ReactMarkdown from 'react-markdown'
 
 
 const MainPicture = () => {
@@ -48,8 +49,8 @@ const MainPicture = () => {
               key={index}
             >
               <div className={css.caption} >
-                <h1 className={css.headaer}>{pic.title}</h1>
-                <p className={css.paragraph}>{pic.content}</p>
+                <ReactMarkdown>{pic.title}</ReactMarkdown>
+                <ReactMarkdown>{pic.content}</ReactMarkdown>
               </div>
               <img
                 className={css.image}
