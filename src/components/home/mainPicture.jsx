@@ -39,7 +39,6 @@ const MainPicture = () => {
   }, [pictureList.length]);
 
   return (
-    <div className={css.relative}>
       <div className={css.mainDiv}>
    {pictureList.map((pic, index) => {
   console.log(pic);
@@ -61,7 +60,6 @@ const MainPicture = () => {
           );
         })}
       </div>
-    </div>
   );
 };
 
