@@ -4,6 +4,7 @@ import css from './addingContent.module.css';
 
 const AddContent = ({ preview, handleFileChange, dataType }) => {
     const [title, setTitle] = useState('');
+    const [author, setAuthor] = useState('');
     const [text, setText] = useState('');
     const [file, setFile] = useState(null);
     const [extraFields, setExtraFields] = useState([]);
@@ -41,6 +42,7 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
 
         const formData = new FormData();
         formData.append('title', `# ${title}`);
+        formData.append('author', `## ${author}`)
         formData.append('text', fullText);
         formData.append('dataType', dataType);
 
@@ -60,6 +62,7 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
 
             // czyścimy pola i pokazujemy komunikat
             setTitle('');
+            setAuthor('')
             setText('');
             setFile(null);
             setExtraFields([]);
@@ -82,6 +85,14 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
                             placeholder="Wpisz tytuł"
+                            className={css.titleInput}
+                        />
+                    </div><div>
+                        <p>Autor</p>
+                        <input
+                            value={author}
+                            onChange={(e) => setAuthor(e.target.value)}
+                            placeholder="Wpisz Autora"
                             className={css.titleInput}
                         />
                     </div>

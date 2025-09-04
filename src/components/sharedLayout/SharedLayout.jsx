@@ -38,7 +38,7 @@ const SharedLayout = () => {
      <div className={css.contactWrapper}>
         <div className={`${css.contactPanel} ${open ? css.open : ""}`}>
           <p>📞 +48 123 456 789</p>
-          <p>✉ kontakt@example.com</p>
+          <a href={"mailto:akademiapostawy@gmail.com"}>✉ akademiapostawy@gmail.com</a>
         </div>
 
         <button

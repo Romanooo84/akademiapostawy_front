@@ -26,8 +26,8 @@
 
 .buttonDiv{
     position: absolute;
-    top: -20px;
-    right: -40px;
+    top: 20px;
+    right: 50px;
 }
 
 .button{

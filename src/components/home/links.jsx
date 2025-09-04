@@ -11,23 +11,46 @@ const Links = () => {
     return (
         <div className={css.mainDiv}>
             <button onClick={() => navigate('/Blog')} className={css.linkButton}>
-                <img src={picture1} alt="Chłopiec z piłką" className={css.picture} />
-                <h1>Blog</h1>
+                <div className={css.pictureAndTitle}>
+                    <img src={picture1} alt="Chłopiec z piłką" className={css.picture} />
+                    <div className={css.showText}>
+                        <p>text do wyswietlenia</p>
+                    </div> 
+                </div>
+                 <h1>Blog</h1>
             </button>
 
             <button onClick={() => navigate('/Filmy')} className={css.linkButton}>
-                <img src={picture2} alt="Doktor" className={css.picture} />
+                <div className={css.pictureAndTitle}>
+                    <img src={picture2} alt="Doktor" className={css.picture} />
+                    <div className={css.showText}>
+                        <p>text do wyswietlenia</p>
+                    </div>
+                </div>
                 <h1>Filmy</h1>
+               
             </button>
 
             <button onClick={() => navigate('/Projekty')} className={css.linkButton}>
-                <img src={picture3} alt="Miednica" className={css.picture} />
+                <div className={css.pictureAndTitle}>
+                    <img src={picture3} alt="Miednica" className={css.picture} />
+                    <div className={css.showText}>
+                        <p>text do wyswietlenia</p>
+                    </div>
+                </div>
                 <h1>Projekty</h1>
+                
             </button>
 
             <button onClick={() => navigate('/Filmy')} className={css.linkButton}>
-                <img src={picture4} alt="Stopy" className={css.picture} />
+                <div className={css.pictureAndTitle}>
+                    <img src={picture4} alt="Stopy" className={css.picture} />
+                    <div className={css.showText}>
+                        <p>text do wyswietlenia</p>
+                    </div>
+                </div>
                 <h1>Fizjomemo</h1>
+             
             </button>
         </div>
     );

@@ -29,9 +29,6 @@ const Footer = () => {
                     </a>  
                 </div>
             </div>
-            <div>
-                kontakt
-            </div>
         </footer>
     );
 };

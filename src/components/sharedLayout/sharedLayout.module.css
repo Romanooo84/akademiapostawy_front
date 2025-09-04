@@ -11,11 +11,22 @@
 
 .contactWrapper {
   position: fixed;
-  bottom: 150px;
+  bottom: 50px;
   right: 0;
   display: flex;
   align-items: center;
   z-index: 100;
+  opacity: 0;
+  transform: translateX(100%); /* domyślnie schowany */
+  animation: showContact 2.5s ease forwards;
+  animation-delay: 0.5s; /* opóźnienie pojawienia */
+}
+
+@keyframes showContact {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .contactPanel {
@@ -23,7 +34,7 @@
   border-radius: 12px 0 0 12px;
   padding: 12px 18px;
   width: 100%;
-  height: 95px;
+  height: 65px;
   box-shadow: -3px 0px 19px 0px var(--line-color);
   white-space: nowrap;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -46,18 +57,22 @@
   display: flex;
   flex-direction: row ;
   align-items: center;
-  gap:30px;
+  gap:10px;
   font-size: 50px;
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   color: white;
   border: none;
   border-radius: 50% 0 0 50%;
-  padding: 10px 14px;
+  padding: 10px 7px;
   cursor: pointer;
   box-shadow: -4px -2px 16px 0px var(--line-color);
   z-index: 100;
-  transition: border-radius 0.3s ease;
+  transition: border-radius 0.3s ease, transform 0.75s ease;
+}
+
+.floatingButton:hover{
+  transform: scale(1.05);
 }
 
 .floatingButton.open{
