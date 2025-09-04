@@ -17,8 +17,8 @@ const Contact = () => {
                         <h1><IoIosContact  />Dorota Marczak</h1>
                          <h1 className={css.emailLink}>
                             <MdEmail />{" "}
-                            <a href="mailto:kontakt@kontakt.pl">
-                                kontakt@kontakt.pl
+                            <a href="mailto:dorota@akademiapostawy.pl">
+                                dorota@akademiapostawy.pl
                             </a>
                         </h1>        
                     </div>
@@ -32,8 +32,8 @@ const Contact = () => {
                         <h1><IoIosContact  />Aleksandra Dobrzyńska</h1>
                          <h1 className={css.emailLink}>
                             <MdEmail />{" "}
-                            <a href="mailto:kontakt@kontakt.pl" >
-                                kontakt@kontakt.pl
+                            <a href="mailto:aleksandra@akademiapostawy.pl" >
+                                aleksandra@akademiapostawy.pl
                             </a>
                         </h1>
                     </div>

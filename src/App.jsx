@@ -12,9 +12,9 @@ function App() {
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route path="Blog" element={<Blog/>} />
-        <Route path="projekty" element={<Projects />} />
-        <Route path="fizjomemo" element={<Video />} />
-        <Route path="filmy" element={<Video />} />
+        <Route path="współpraca" element={<Projects />} />
+        <Route path="produkty" element={<Video />} />
+        <Route path="treningi" element={<Video />} />
         <Route path="o nas" element={<Contact />} />
         <Route path="adminDorota" element={<Admin />} />
       </Route>

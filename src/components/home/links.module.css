@@ -56,7 +56,6 @@
   transition: transform 0.75s ease-out;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  padding: 20px;
 }
 
 .pictureAndTitle:hover .showText {
@@ -70,9 +69,12 @@
 }
 
 .pDiv{
-    padding: 20px;
     text-align: justify;
     cursor: pointer;
+}
+
+.paragraph{
+    padding: 20px
 }
 
 
