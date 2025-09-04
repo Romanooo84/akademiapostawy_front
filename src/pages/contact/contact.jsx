@@ -2,6 +2,7 @@ import css from './contact.module.css';
 import { MdOutlinePhoneAndroid } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
 import { IoIosContact } from "react-icons/io";
+import link  from '../../link'
 
 const Contact = () => {
 
@@ -11,7 +12,7 @@ const Contact = () => {
     <div className={css.main}>
         <div className={css.contactsMainDiv}>
             <div className={css.mainDiv}>     
-                <img className={css.img} src={`${photoAdress}DOROTA_PORTRAIT.png`} alt="Dorota" />
+                <img className={css.img} src={`${link}images/about/DOROTA_PORTRAIT.png`} alt="Dorota" />
                 <div className={css.descriptionAndContactDiv}>
                     <div className={css.textDiv}>
                         <h1><IoIosContact  />Dorota Marczak</h1>
@@ -26,7 +27,7 @@ const Contact = () => {
                 </div>
             </div>
              <div className={css.mainDiv}>     
-                <img className={css.img} src={`${photoAdress}OLA_PORTRAIT.png`}alt="Aleksandra" />
+                <img className={css.img} src={`${link}images/about/OLA_PORTRAIT.png`}alt="Aleksandra" />
                 <div className={css.descriptionAndContactDiv}>
                     <div className={css.textDiv}>
                         <h1><IoIosContact  />Aleksandra Dobrzyńska</h1>
