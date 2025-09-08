@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import css from "./blog.module.css";
 
 

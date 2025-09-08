@@ -1,5 +1,4 @@
 import css from './contact.module.css';
-
 import { MdEmail } from "react-icons/md";
 import { IoIosContact } from "react-icons/io";
 import link  from '../../link'
