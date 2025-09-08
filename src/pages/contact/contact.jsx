@@ -1,12 +1,11 @@
 import css from './contact.module.css';
-import { MdOutlinePhoneAndroid } from "react-icons/md";
+
 import { MdEmail } from "react-icons/md";
 import { IoIosContact } from "react-icons/io";
 import link  from '../../link'
 
 const Contact = () => {
 
-  const photoAdress='https://srv80578.seohost.com.pl/images/about/'
 
   return (
     <div className={css.main}>
