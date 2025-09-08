@@ -1,5 +1,5 @@
+import { useEffect } from "react";
 import css from "./blog.module.css";
-import ReactMarkdown from 'react-markdown'
 
 
 const BlogShortText = ( {blogList, setSelectedBlog }) => {
@@ -16,11 +16,19 @@ const BlogShortText = ( {blogList, setSelectedBlog }) => {
         content = content.slice(0, hashIndex).trim();
       }
 
-      const words = content.split(/\s+/);
-      const shortContent = words.length > 25
-        ? words.slice(0, 25).join(' ') + '...'
-        : content + (hashIndex !== -1 ? '...' : '');
-        
+      const plainText = content.replace(/<[^>]+>/g, ''); 
+
+        // Podziel na słowa
+        const words = plainText.split(/\s+/); 
+
+       
+
+        // Skracanie treści
+        let shortContent =
+        words.length > 25
+        ? words.slice(0, 25).join(" ") + "..."
+        : plainText + (hashIndex !== -1 ? "..." : "");    
+
         return (
           <div
             className={css.contentDiv}
@@ -30,12 +38,12 @@ const BlogShortText = ( {blogList, setSelectedBlog }) => {
           >
             <img src={blog.img} alt="Blog" className={css.image} />
             <div className={css.titleDiv}>
-              <ReactMarkdown>{blog.title}</ReactMarkdown>
+              <h1>{blog.title}</h1>
               <div className={css.header2}>
-                <ReactMarkdown>{blog.author}</ReactMarkdown>
+                <h2>{blog.author}</h2>
               </div>
               <div className={css.paragraph}>
-                <ReactMarkdown>{shortContent}</ReactMarkdown>
+                <div dangerouslySetInnerHTML={{ __html: shortContent}}/>
               </div>
             </div>
           </div>

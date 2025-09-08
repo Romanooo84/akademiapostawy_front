@@ -36,6 +36,11 @@ code{
     object-fit: cover;
 }
 
+.paragraph{
+    display: flex;
+    flex-direction: column;
+}
+
 @media (max-width: 767px) {
     .contentDiv{
         flex-direction: column;

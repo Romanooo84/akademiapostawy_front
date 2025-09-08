@@ -1,13 +1,13 @@
 import link from '../../link';
 import { useState } from 'react';
+import TextEditor from './textEditor';
 import css from './addingContent.module.css';
 
 const AddContent = ({ preview, handleFileChange, dataType }) => {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
-    const [text, setText] = useState('');
+    const [text, setText] = useState(''); // <- tutaj masz treść z edytora
     const [file, setFile] = useState(null);
-    const [extraFields, setExtraFields] = useState([]);
     const [successMessage, setSuccessMessage] = useState('');
 
     const onFileChange = (e) => {
@@ -16,34 +16,11 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
         handleFileChange(e);
     };
 
-    const addHeaderField = () => {
-        setExtraFields([...extraFields, { type: 'header', value: '' }]);
-    };
-
-    const addTextField = () => {
-        setExtraFields([...extraFields, { type: 'text', value: '' }]);
-    };
-
-    const handleExtraChange = (index, newValue) => {
-        const updated = [...extraFields];
-        updated[index].value = newValue;
-        setExtraFields(updated);
-    };
-
     const onClick = async () => {
-        let fullText = text;
-        extraFields.forEach((field) => {
-            if (field.type === 'header') {
-                fullText += `\n### ${field.value}`;
-            } else {
-                fullText += `\n${field.value}`;
-            }
-        });
-
         const formData = new FormData();
-        formData.append('title', `# ${title}`);
-        formData.append('author', `## ${author}`)
-        formData.append('text', fullText);
+        formData.append('title', `${title}`);
+        formData.append('author', `${author}`);
+        formData.append('text', text); // <- tu było fullText, a powinno być text
         formData.append('dataType', dataType);
 
         if (file) formData.append('image', file);
@@ -60,12 +37,10 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
             const result = await res.json();
             console.log('Zapisano:', result);
 
-            // czyścimy pola i pokazujemy komunikat
             setTitle('');
-            setAuthor('')
+            setAuthor('');
             setText('');
             setFile(null);
-            setExtraFields([]);
             setSuccessMessage('Dane zapisane pomyślnie.');
         } catch (err) {
             console.error('Wystąpił błąd:', err);
@@ -87,7 +62,8 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
                             placeholder="Wpisz tytuł"
                             className={css.titleInput}
                         />
-                    </div><div>
+                    </div>
+                    <div>
                         <p>Autor</p>
                         <input
                             value={author}
@@ -98,42 +74,7 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
                     </div>
                     <div>
                         <p>Tekst</p>
-                        <textarea
-                            value={text}
-                            onChange={(e) => setText(e.target.value)}
-                            placeholder="Wpisz tekst"
-                            className={css.textInput}
-                        />
-                    </div>
-
-                    {extraFields.map((field, index) => (
-                        <div key={index}>
-                            {field.type === 'header' ? (
-                                <input
-                                    type="text"
-                                    value={field.value}
-                                    onChange={(e) => handleExtraChange(index, e.target.value)}
-                                    placeholder="Dodatkowy nagłówek"
-                                    className={css.titleInput}
-                                />
-                            ) : (
-                                <textarea
-                                    value={field.value}
-                                    onChange={(e) => handleExtraChange(index, e.target.value)}
-                                    placeholder="Dodatkowy tekst"
-                                    className={css.textInput}
-                                />
-                            )}
-                        </div>
-                    ))}
-
-                    <div style={{ marginTop: 10 }}>
-                        <button type="button" onClick={addHeaderField}>
-                            Dodaj nagłówek
-                        </button>
-                        <button type="button" onClick={addTextField} style={{ marginLeft: 10 }}>
-                            Dodaj tekst
-                        </button>
+                        <TextEditor value={text} onChange={setText} />
                     </div>
 
                     <div style={{ marginTop: 15 }}>

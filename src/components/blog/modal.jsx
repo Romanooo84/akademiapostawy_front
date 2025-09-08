@@ -1,6 +1,4 @@
-
 import css from "./modal.module.css";
-import ReactMarkdown from 'react-markdown'
 
 const Modal= ({ setSelectedBlog, selectedBlog}) => {
 
@@ -11,16 +9,6 @@ const Modal= ({ setSelectedBlog, selectedBlog}) => {
     const handleCloseModal = () => {
     setSelectedBlog(null);
   };
-
-  const markdownComponents = {
-  h1: ({  ...props }) => <h1 className={css.header1} {...props} />,
-  h2: ({  ...props }) => <h2 className={css.header2} {...props} />,
-  h3: ({  ...props }) => <h3 className={css.header3} {...props} />,
-  p: ({  ...props }) => <p className={css.paragraph} {...props} />,
-  li: ({  ...props }) => <li className={css.li} {...props} />,
-};
-
-
 
 
     return(
@@ -34,10 +22,10 @@ const Modal= ({ setSelectedBlog, selectedBlog}) => {
             </div>
 
             {/* Teraz mamy dostęp do wszystkich danych bloga */}
-            <ReactMarkdown components={markdownComponents}>{selectedBlog.title}</ReactMarkdown>
+            <h3>{selectedBlog.title}</h3>
             <div className={css.contentDiv}>
-              <ReactMarkdown components={markdownComponents}>{selectedBlog.content}</ReactMarkdown>
-              <ReactMarkdown components={markdownComponents}>{selectedBlog.author}</ReactMarkdown>
+              <div dangerouslySetInnerHTML={{ __html: selectedBlog.content}}/>
+              <h2>{selectedBlog.author}</h2>
             </div>
 
           </div>

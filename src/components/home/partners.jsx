@@ -1,38 +1,31 @@
-import sp80 from '../../images/sp80.jpg';
-import sp209 from '../../images/sp209.jpg';
-import sp263 from '../../images/sp263.png';
-import sp352 from '../../images/sp352.png';
 import css from './partners.module.css';
+import { useEffect, useState } from 'react';
+import link from '../../link';
 
 const Parters=() => {
+  
+const [partnersList, setPartnersList] = useState([]);
 
- const partnersList = [
-    {
-      picture: sp80,
-      name: 'Szkoła Podstawowa nr 80 im. Marii Kownackiej w Warszawie',
-      alt: 'SP 80',
-    },
-    {
-      picture: sp209,
-      name: 'Szkoła Podstawowa nr 209 im. Hanki Ordonówny w Warszawie',
-      alt: 'SP 209',
-    },
-    {
-      picture: sp263,
-      name: 'Szkoła Podstawowa nr 263 im. Powstańców Wielkopolskich w Warszawie',
-      alt: 'SP 263',
-    },
-    {
-      picture: sp352,
-      name: 'Szkoła Podstawowa nr 352 im. Jerzego Huberta Wagnera w Warszawie',
-      alt: 'SP 352',
-    },
-  ];
+ useEffect(() => {
+    const fetchPictures = async () => {
+      try {
+        const response = await fetch(`${link}partnerslist`);
+        if (!response.ok) throw new Error('Błąd pobierania danych');
+        const data = await response.json();
+        setPartnersList(data);
+        console.log(data)
+      } catch (error) {
+        console.error('Nie udało się pobrać listy zdjęć:', error);
+      }
+    };
+
+    fetchPictures();
+  }, []);
 
 const markup=partnersList.map((partner) => (
     <div className={css.partnerDiv} key={partner.alt}>
         <img className={css.partnerImg} src={partner.picture} alt={partner.alt} />
-        <p>{partner.name}</p>
+        <h3>{partner.name}</h3>
     </div>
 ));
 

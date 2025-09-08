@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import link from '../../link';
 import AdminContent from "../../components/admin/adminContent";
+import TextEditor from "../../components/admin/textEditor";
 import css from './admin.module.css'
 
 const Admin = () => {
