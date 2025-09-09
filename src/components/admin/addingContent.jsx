@@ -33,7 +33,7 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
     if (file) formData.append('image', file);
 
     // 🔥 dorzucamy wszystkie obrazki z edytora
-    pendingImages.forEach((img, i) => {
+    pendingImages.forEach((img) => {
       formData.append('editorImages', img.file); // klucz `editorImages` jako tablica
     });
 

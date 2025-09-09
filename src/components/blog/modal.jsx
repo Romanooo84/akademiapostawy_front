@@ -1,6 +1,4 @@
 import css from "./modal.module.css";
-import { useEffect } from "react";
-
 const Modal= ({ setSelectedBlog, selectedBlog}) => {
 
     if (selectedBlog === null) {
@@ -10,12 +8,7 @@ const Modal= ({ setSelectedBlog, selectedBlog}) => {
     const handleCloseModal = () => {
     setSelectedBlog(null);
   };
-  
-    useEffect(() => {
-    if (selectedBlog) {
-      console.log(selectedBlog.content)
-    }
-  }, [selectedBlog]);
+
 
 
     return(
