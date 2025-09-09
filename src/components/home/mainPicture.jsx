@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import css from './mainPicture.module.css';
 import link from '../../link.js';
-import ReactMarkdown from 'react-markdown'
+
 
 
 const MainPicture = () => {
@@ -48,8 +48,8 @@ const MainPicture = () => {
               key={index}
             >
               <div className={css.caption} >
-                <ReactMarkdown>{pic.title}</ReactMarkdown>
-                <ReactMarkdown>{pic.content}</ReactMarkdown>
+                <h3>{pic.title}</h3>
+                <div dangerouslySetInnerHTML={{ __html: pic.content}}/>
               </div>
               <img
                 className={css.image}

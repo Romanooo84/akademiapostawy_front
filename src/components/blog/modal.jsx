@@ -1,4 +1,5 @@
 import css from "./modal.module.css";
+import { useEffect } from "react";
 
 const Modal= ({ setSelectedBlog, selectedBlog}) => {
 
@@ -9,6 +10,12 @@ const Modal= ({ setSelectedBlog, selectedBlog}) => {
     const handleCloseModal = () => {
     setSelectedBlog(null);
   };
+  
+    useEffect(() => {
+    if (selectedBlog) {
+      console.log(selectedBlog.content)
+    }
+  }, [selectedBlog]);
 
 
     return(
@@ -22,10 +29,10 @@ const Modal= ({ setSelectedBlog, selectedBlog}) => {
             </div>
 
             {/* Teraz mamy dostęp do wszystkich danych bloga */}
-            <h3>{selectedBlog.title}</h3>
+            <h1 className={css.header1}>{selectedBlog.title}</h1>
             <div className={css.contentDiv}>
               <div dangerouslySetInnerHTML={{ __html: selectedBlog.content}}/>
-              <h2>{selectedBlog.author}</h2>
+              <h2 className={css.header2}>{selectedBlog.author}</h2>
             </div>
 
           </div>

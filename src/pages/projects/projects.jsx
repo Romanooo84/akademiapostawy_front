@@ -17,6 +17,7 @@ const Projects = () => {
         if (!response.ok) throw new Error('Błąd pobierania danych');
         const data = await response.json();
         setProjectContent(data);
+        console.log(data)
       } catch (error) {
         console.error('Nie udało się pobrać listy zdjęć:', error);
       }

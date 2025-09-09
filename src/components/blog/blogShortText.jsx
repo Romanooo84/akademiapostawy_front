@@ -4,6 +4,7 @@ import css from "./blog.module.css";
 const BlogShortText = ( {blogList, setSelectedBlog }) => {
 
     const handleOpenModal = (blog) => {
+      console.log(blog)
         setSelectedBlog(blog);
     };
 
@@ -20,7 +21,7 @@ const BlogShortText = ( {blogList, setSelectedBlog }) => {
         // Podziel na słowa
         const words = plainText.split(/\s+/); 
 
-       
+  
 
         // Skracanie treści
         let shortContent =

@@ -1,16 +1,22 @@
-
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Link from "@tiptap/extension-link";
 import Image from "@tiptap/extension-image";
 import Youtube from "@tiptap/extension-youtube";
+import link from "../../link";
 
-export default function TextEditor({  value, onChange }) {
- const editor = useEditor({
+export default function TextEditor({ value, onChange, addPendingImage }) {
+  const editor = useEditor({
     extensions: [
       StarterKit,
       Link.configure({ openOnClick: true }),
       Image,
+      Youtube.configure({
+        inline: false,
+        width: 640,
+        height: 360,
+        modestBranding: true,
+      }),
     ],
     content: value || "<p>Wpisz tekst</p>",
     onUpdate: ({ editor }) => {
@@ -19,7 +25,7 @@ export default function TextEditor({  value, onChange }) {
   });
 
   const addLink = () => {
-    let url = prompt("Wprowadź URL linku");
+    let url = prompt(`${link}images/`);
     if (!url) return;
     if (!/^https?:\/\//i.test(url)) url = "https://" + url;
 
@@ -31,48 +37,36 @@ export default function TextEditor({  value, onChange }) {
       .focus()
       .insertContent({
         type: "text",
-        text: text,
-        marks: [
-          {
-            type: "link",
-            attrs: { href: url, target: "_blank" },
-          },
-        ],
+        text,
+        marks: [{ type: "link", attrs: { href: url, target: "_blank" } }],
       })
       .run();
   };
 
   const addImage = () => {
-    const url = prompt("Wprowadź URL obrazu");
-    if (url) {
-      editor.chain().focus().setImage({ src: url }).run();
-    }
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = "image/*";
+
+    input.onchange = (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const localUrl = URL.createObjectURL(file);
+      editor.chain().focus().setImage({ src: localUrl }).run();
+
+      if (addPendingImage) addPendingImage(file, localUrl);
+    };
+
+    input.click();
   };
 
- const addYoutube = () => {
-  const url = prompt(
-    "Wklej link do filmu YouTube (np. https://www.youtube.com/watch?v=ID)"
-  );
-  if (!url) return;
+  const addYoutube = () => {
+    const url = prompt("Wklej link do filmu YouTube");
+    if (!url) return;
 
-  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/);
-  if (!match) {
-    alert("Niepoprawny link YouTube");
-    return;
-  }
-
-  const videoId = match[1];
-
-  editor
-    .chain()
-    .focus()
-    .insertContent({
-      type: 'iframe',
-      attrs: { src: `https://www.youtube.com/embed/${videoId}` }
-    })
-    .run();
-};
-
+    editor.chain().focus().setYoutubeVideo({ src: url }).run();
+  };
 
   if (!editor) return null;
 

@@ -3,90 +3,102 @@ import { useState } from 'react';
 import TextEditor from './textEditor';
 import css from './addingContent.module.css';
 
+
 const AddContent = ({ preview, handleFileChange, dataType }) => {
-    const [title, setTitle] = useState('');
-    const [author, setAuthor] = useState('');
-    const [text, setText] = useState(''); // <- tutaj masz treść z edytora
-    const [file, setFile] = useState(null);
-    const [successMessage, setSuccessMessage] = useState('');
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const [text, setText] = useState('');
+  const [file, setFile] = useState(null);
+  const [pendingImages, setPendingImages] = useState([]); // 🔥 lista oczekujących obrazków
+  const [successMessage, setSuccessMessage] = useState('');
 
-    const onFileChange = (e) => {
-        const selectedFile = e.target.files[0];
-        setFile(selectedFile);
-        handleFileChange(e);
-    };
+  const addPendingImage = (file, localUrl) => {
+    setPendingImages((prev) => [...prev, { file, localUrl }]);
+  };
 
-    const onClick = async () => {
-        const formData = new FormData();
-        formData.append('title', `${title}`);
-        formData.append('author', `${author}`);
-        formData.append('text', text); // <- tu było fullText, a powinno być text
-        formData.append('dataType', dataType);
+  const onFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    setFile(selectedFile);
+    handleFileChange(e);
+  };
 
-        if (file) formData.append('image', file);
-        console.log([...formData]);
+  const onClick = async () => {
+  try {
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('author', author);
+    formData.append('text', text);
+    formData.append('dataType', dataType);
 
-        try {
-            const res = await fetch(`${link}${dataType}`, {
-                method: 'POST',
-                body: formData,
-            });
+    if (file) formData.append('image', file);
 
-            if (!res.ok) throw new Error('Błąd podczas zapisu');
+    // 🔥 dorzucamy wszystkie obrazki z edytora
+    pendingImages.forEach((img, i) => {
+      formData.append('editorImages', img.file); // klucz `editorImages` jako tablica
+    });
 
-            const result = await res.json();
-            console.log('Zapisano:', result);
+    const res = await fetch(`${link}${dataType}`, {
+      method: 'POST',
+      body: formData,
+    });
 
-            setTitle('');
-            setAuthor('');
-            setText('');
-            setFile(null);
-            setSuccessMessage('Dane zapisane pomyślnie.');
-        } catch (err) {
-            console.error('Wystąpił błąd:', err);
-            setSuccessMessage('Wystąpił błąd podczas zapisu.');
-        }
-    };
+    if (!res.ok) throw new Error('Błąd podczas zapisu');
 
-    return (
-        <div style={{ marginTop: 20, border: '3px solid #eb549aff', padding: 10 }}>
-            {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+    const result = await res.json();
+    console.log('Zapisano:', result);
 
-            {!successMessage && (
-                <>
-                    <div>
-                        <p>Tytuł</p>
-                        <input
-                            value={title}
-                            onChange={(e) => setTitle(e.target.value)}
-                            placeholder="Wpisz tytuł"
-                            className={css.titleInput}
-                        />
-                    </div>
-                    <div>
-                        <p>Autor</p>
-                        <input
-                            value={author}
-                            onChange={(e) => setAuthor(e.target.value)}
-                            placeholder="Wpisz Autora"
-                            className={css.titleInput}
-                        />
-                    </div>
-                    <div>
-                        <p>Tekst</p>
-                        <TextEditor value={text} onChange={setText} />
-                    </div>
+    setTitle('');
+    setAuthor('');
+    setText('');
+    setFile(null);
+    setPendingImages([]);
+    setSuccessMessage('Dane zapisane pomyślnie.');
+  } catch (err) {
+    console.error('Wystąpił błąd:', err);
+    setSuccessMessage('Wystąpił błąd podczas zapisu.');
+  }
+};
 
-                    <div style={{ marginTop: 15 }}>
-                        <p>Zdjęcie</p>
-                        <input type="file" accept="image/*" onChange={onFileChange} />
-                        {preview && <img src={preview} alt="Podgląd" style={{ width: 200, marginTop: 10 }} />}
-                    </div>
-                    <button id={dataType} onClick={onClick} style={{ marginTop: 15 }}>Zapisz</button>
-                </>
-            )}
-        </div>
-    );
+
+  return (
+    <div style={{ marginTop: 20, border: '3px solid #eb549aff', padding: 10 }}>
+      {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+
+      {!successMessage && (
+        <>
+          <div>
+            <p>Tytuł</p>
+            <input
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Wpisz tytuł"
+              className={css.titleInput}
+            />
+          </div>
+          <div>
+            <p>Autor</p>
+            <input
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
+              placeholder="Wpisz Autora"
+              className={css.titleInput}
+            />
+          </div>
+          <div>
+            <p>Tekst</p>
+            <TextEditor value={text}  onChange={setText} addPendingImage={addPendingImage} />
+          </div>
+
+          <div style={{ marginTop: 15 }}>
+            <p>Zdjęcie (główne)</p>
+            <input type="file" accept="image/*" onChange={onFileChange} />
+            {preview && <img src={preview} alt="Podgląd" style={{ width: 200, marginTop: 10 }} />}
+          </div>
+          <button id={dataType} onClick={onClick} style={{ marginTop: 15 }}>Zapisz</button>
+        </>
+      )}
+    </div>
+  );
 };
 
 export default AddContent;
