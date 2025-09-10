@@ -11,10 +11,6 @@ const [data, setDdata] = useState([]);
 const [dataType, setDataType] = useState('');
 const [startAddContent, setStartAddContent] = useState(false);
 
- useEffect(() => {
-   console.log('Component mounted');
-  }, []);
-
 
   const fetchData = async (lastPart) => {
     console.log('Pobieram dane dla:', lastPart);
@@ -23,6 +19,7 @@ const [startAddContent, setStartAddContent] = useState(false);
         if (!response.ok) throw new Error('Błąd pobierania danych');
         const data = await response.json();
         setDdata(data);
+        console.log(data)
       } catch (error) {
         console.error('Nie udało się pobrać listy zdjęć:', error);
       }
@@ -38,9 +35,11 @@ const [startAddContent, setStartAddContent] = useState(false);
 return (
     <>
     <div className={css.buttonContainer}>
-        <button className={css.button} onClick={() => onClick('getblogcontent')}>pobierz blog</button>
-        <button className={css.button} onClick={() => onClick('projectscontent')}>pobierz projekty</button>
-        <button className={css.button} onClick={() => onClick('getmainpicturelist')}>pobierz zdjęcia na główną</button>
+        <button className={css.button} onClick={() => onClick('getblogcontent')}>Zarządzaj blogiem</button>
+        <button className={css.button} onClick={() => onClick('projectscontent')}>Zarządzaj projektami</button>
+        <button className={css.button} onClick={() => onClick('getmainpicturelist')}>Zarządzaj zdjęciami na głównej stronie</button>
+        <button className={css.button} onClick={() => onClick('kindergardens')}>Zarządzaj listą przedszkoli</button>
+        <button className={css.button} onClick={() => onClick('partnerslist')}>Zarządzaj listą partnerów</button>
     </div>
     {data.length >0 && <AdminContent data={data}  dataType={dataType} setStartAddContent={setStartAddContent} startAddContent={startAddContent}/>}
 

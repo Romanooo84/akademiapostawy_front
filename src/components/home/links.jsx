@@ -1,8 +1,8 @@
 import css from './links.module.css';
-import picture1 from '../../images/chlopiec.jpg';
-import picture2 from '../../images/doktor.jpg';
-import picture3 from '../../images/miednica.jpg';
-import picture4 from '../../images/stopy.jpg';
+import picture1 from '../../images/blog.png';
+import picture2 from '../../images/filmy.png';
+import picture3 from '../../images/zajecia.jpg';
+import picture4 from '../../images/Fizjomemo karty.png';
 import { useNavigate } from 'react-router-dom';
 
 const Links = () => {
@@ -22,7 +22,7 @@ const Links = () => {
 
             <button onClick={() => navigate('/Treningi')} className={css.linkButton}>
                 <div className={css.pictureAndTitle}>
-                    <img src={picture2} alt="Doktor" className={css.picture} />
+                    <img src={picture4} alt="Doktor" className={css.picture} />
                     <div className={css.showText}>
                         <p className={css.paragraph}>Tworzymy i oferujemy produkty wspierające rozwój dzieci, które powstały we współpracy z ekspertami i Politechniką Warszawską. Każde rozwiązanie zostało zaprojektowane tak, by ułatwiało budowanie zdrowych nawyków i pomagało w profilaktyce wad postawy – w domu, szkole i przedszkolu.</p>
                     </div>
@@ -44,7 +44,7 @@ const Links = () => {
 
             <button onClick={() => navigate('/Treningi')} className={css.linkButton}>
                 <div className={css.pictureAndTitle}>
-                    <img src={picture4} alt="Stopy" className={css.picture} />
+                    <img src={picture2} alt="Stopy" className={css.picture} />
                     <div className={css.showText}>
                         <p className={css.paragraph}>Ćwiczenia mogą być świetną zabawą! W naszych filmach pokazujemy treningi oparte na ciekawych historyjkach i ruchowych wyzwaniach, które angażują dzieci i rozwijają ich wyobraźnię. Dzięki temu maluchy chętnie ćwiczą, a rodzice i nauczyciele dostają gotowe narzędzia do pracy z dziećmi.</p>
                     </div>

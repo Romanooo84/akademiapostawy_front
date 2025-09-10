@@ -55,12 +55,21 @@
 .contentDiv img {
   display: block;
   margin: 20px auto;
-  width: 450px;
+  width: 600px;
   height: 400px;
   height: auto;
   object-fit: contain;
   box-shadow: 0px 3px 19px 4px rgb(193 135 157);
   border-radius: 10px;
+}
+
+.contentDiv h1,
+.contentDiv h2,
+.contentDiv h3,
+.contentDiv p,
+.contentDiv li {
+  color: black;
+  font-family: var(--font-article);
 }
 
 .header1{

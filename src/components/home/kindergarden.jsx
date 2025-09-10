@@ -2,14 +2,14 @@ import css from './partners.module.css';
 import { useEffect, useState } from 'react';
 import link from '../../link';
 
-const Parters=() => {
+const Kindergardens=() => {
   
 const [partnersList, setPartnersList] = useState([]);
 
  useEffect(() => {
     const fetchPictures = async () => {
       try {
-        const response = await fetch(`${link}partnerslist`);
+        const response = await fetch(`${link}kindergardens`);
         if (!response.ok) throw new Error('Błąd pobierania danych');
         const data = await response.json();
         setPartnersList(data);
@@ -32,7 +32,7 @@ const markup=partnersList.map((partner) => (
   return (
         <div className={css.mainDiv}>
             <div className={css.titleDiv}>
-            <h1>Nasi Partnerzy</h1>
+            <h1>Skorzystali z naszego doświadczenia</h1>
             </div>
             <div className={css.partnersListDiv}>
                 {markup}
@@ -41,4 +41,4 @@ const markup=partnersList.map((partner) => (
         );
  }
 
- export default Parters;
+ export default Kindergardens;

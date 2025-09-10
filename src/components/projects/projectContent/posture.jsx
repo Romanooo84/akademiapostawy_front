@@ -11,7 +11,7 @@ const ProjectsRender = ({ projectContent, activeTab }) => {
         if (id !== activeTab) return null; // renderujemy tylko aktywny element
         return (
           <div className={css.mainDiv} key={key} id={id}>
-            <h3>{project.title}</h3>
+            <h1 className={css.header1}>{project.title}</h1>
             <div className={css.text}>
               <div  className={css.contentDiv} dangerouslySetInnerHTML={{ __html: project.content}}/>
             </div>

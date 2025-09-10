@@ -1,5 +1,6 @@
 import MainPicture from "../../components/home/mainPicture.jsx"
 import Links from "../../components/home/links.jsx"
+import Kindergardens from "../../components/home/kindergarden.jsx"
 import Parters from "../../components/home/partners.jsx"
 
 const Home=()=>{
@@ -8,6 +9,7 @@ const Home=()=>{
         <>
             <MainPicture/>
             <Links/>
+            <Kindergardens/>
             <Parters/>
         </>
     )
