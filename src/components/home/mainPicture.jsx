@@ -30,7 +30,7 @@ const MainPicture = () => {
 
     const interval = setInterval(() => {
       setCurrentIndex(prevIndex => (prevIndex + 1) % pictureList.length);
-    }, 20000); // co 10 sek
+    }, 8500); // co 10 sek
 
     return () => {
       clearTimeout(timeout);

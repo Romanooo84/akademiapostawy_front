@@ -94,7 +94,7 @@ const AdminContent = ({ data, dataType, startAddContent, setStartAddContent }) =
   };
 
   return (
-    <div>
+    <div className={css.mainDiv}>
       <button className={css.button} onClick={addContent}>
         {startAddContent ? "Anuluj" : "Dodaj"}
       </button>

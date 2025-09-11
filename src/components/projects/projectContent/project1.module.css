@@ -89,12 +89,20 @@
 
 @media (max-width: 768px){
   .mainDiv {
-        width: 290px;
+        width: 320px;
         padding: 10px;
     }
 
     .header1{
   font-size: 25px;
+}
+
+.text{
+    width: 290px;
+}
+
+.text p{
+    font-size: 15px;
 }
 
 }

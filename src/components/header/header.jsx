@@ -15,24 +15,26 @@ const Header=()=>{
     const buttonsList = ['home', `o nas`, `blog`, `treningi`, `produkty`, `współpraca`];
     
     const path = location.pathname.split('/');
-    const pageTitle = path[path.length - 1] || 'home'; // dla '/' domyślnie 'home'
+    console.log(path)
+    const pageTitle = decodeURIComponent(path[path.length - 1] || 'home'); // dla '/' domyślnie 'home'
 
-    const markup = buttonsList
-        .filter(button => {
-            const buttonName = button.toLowerCase();
-            // Jeśli jesteśmy na tej stronie — pomijamy ją
-            return buttonName !== pageTitle.toLowerCase();
-        })
-        .map((button, index) => {
-            const upperLetter = button.charAt(0).toUpperCase() + button.slice(1);
-            const pathName = button.toLowerCase() === 'home' ? '/' : `/${button.toLowerCase()}`;
+    const markup = buttonsList.map((button, index) => {
+    const buttonName = button.toLowerCase();
+    const upperLetter = button.charAt(0).toUpperCase() + button.slice(1);
+    const pathName = buttonName === 'home' ? '/' : `/${buttonName}`;
 
-            return (
-                <Link key={index} to={pathName}>
-                    <button className={css.buttons}>{upperLetter}</button>
-                </Link>
-            );
-        });
+    const isActive = buttonName === pageTitle.toLowerCase();
+
+    return (
+        <Link key={index} to={pathName}>
+            <button
+                className={`${css.buttons} ${isActive ? css.active : ''}`}
+            >
+                {upperLetter}
+            </button>
+        </Link>
+    );
+});
 
     setButtons(markup);
 }, [location]);
