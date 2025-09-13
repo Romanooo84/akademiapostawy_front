@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import link from '../../link';
 import AdminContent from "../../components/admin/adminContent";
-import TextEditor from "../../components/admin/textEditor";
 import css from './admin.module.css'
 
 const Admin = () => {
@@ -19,7 +18,6 @@ const [startAddContent, setStartAddContent] = useState(false);
         if (!response.ok) throw new Error('Błąd pobierania danych');
         const data = await response.json();
         setDdata(data);
-        console.log(data)
       } catch (error) {
         console.error('Nie udało się pobrać listy zdjęć:', error);
       }

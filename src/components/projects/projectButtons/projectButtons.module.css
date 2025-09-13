@@ -1,12 +1,8 @@
-:root {
-  --itemHeight: 70px
-
-}
 
 .mainDiv{
   display: flex;
   flex-direction: row;
-  gap:20px
+  gap:20px;
 }
 
 .buttonsDiv{
@@ -15,35 +11,47 @@
   justify-content: space-evenly;
 }
 
-.wrapper {
-  border-radius: 30px;
-  margin: 0 auto;
-  width: 400px;
-  height: calc(30px + 3 * var(--itemHeight));
-  overflow: hidden;
-  position: relative;
-}
-
 .carousel {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: max-content;
-  transition: transform 1s ease-in-out
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 2px solid var(--line-color);
+    padding: 50px 100px;
+    width: 1200px;
+    justify-content: center;
+    
+}
+
+.border{
+  display: grid;
+  border-right: 2px solid var(--line-color);
+  padding: 10px; 
+}
+
+.border:last-child {
+  border-right: none;
 }
 
 .item {
   width: 350px;
-  height: var(--itemHeight);
+  border:none;
+  height: 500px;
   margin-bottom: 10px;
-  box-shadow: 0px 5px 4px 0px rgb(193 135 157);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
-  border: none;
-  border-radius: 20px;
+  background-color: white;
+  padding: 10px;
+  transition: transform 0.9s ease;
+  cursor: pointer;
+  margin: 0;
+}
+
+.item:hover{
+  transform: scale(1.03);
+  z-index: 1;
 }
 
 .h1{
@@ -51,9 +59,9 @@
 }
 
 .projectImg {
-  width: 130px;
-  height: 100px;
-  object-fit: cover;
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
 }
 
 .navBtn{

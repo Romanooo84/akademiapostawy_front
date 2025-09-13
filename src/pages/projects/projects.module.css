@@ -15,61 +15,62 @@
     flex-direction: column;
 }
 
-.tabAndBoxDiv{
-    z-index: 1;
-    position: sticky;
-    top: 140px;
-    width: 1200px;
-    background-color: white;
+
+ .active {
+  position: fixed;
+  top: 85vh;
+  left: 15px;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.5s ease;
+  animation: arrowUp 2s infinite; /* animacja działa cały czas */
+  cursor: pointer;
+}
+
+.inactive {
+  position: fixed;
+  top: 85vh;
+  left: 15px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  animation: arrowUp 2s infinite; /* animacja cały czas działa */
+ 
+}
+
+@keyframes arrowUp {
+  0% { 
+    transform: translateY(0);
+    color: var(--primary-color); 
+  }
+  25% { 
+    transform: translateY(-40px);
+    color: var(--secondary-color); 
+  }
+  100% { 
+    transform: translateY(0); 
+    color: var(--primary-color); 
+  }
 }
 
 
-.tabNav{ 
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-}
-
-.shadowDiv{
-  box-shadow: #f3618e;
-}
-
-.activeTab {
-    transform: scale(1.1);
-    background-color: #fce3ec88;
-    transition: transform 0.5s ease-in-out !important;
-    opacity: 1 !important;
-    
-}
-
-.tabNav button {
-    width: 400px;
-    text-align: justify;
-    white-space: pre-line;
-    display: flex;
-    gap: 20px;
-    border: 2px solid #f3618e;
-    overflow: hidden;
-    padding: 10px;
-    align-items: center;
-    box-shadow: 6px 7px 15px 2px rgb(193 135 157);
-    cursor: pointer;
-    transition: transform 0.5s ease-in-out, background-color 1.5s ease;
-    opacity: 0.5;
-}
-
-
-
-.tabNav button:hover {
-  background-color: #fce3ec88;
-  transform: scale(1.1);
-}
-
-.projectImg{
-  width: 150px;
+.svg{
+  width: 100px;
   height: 100px;
-  object-fit: cover;
+  color: var(--primary-color); /* startowy kolor */
+  transition: color 0.2s ease;
+  animation: arrowUp 2s infinite; /* animacja cały czas działa */
+  
 }
+
+
+.button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
 
 @media (min-width: 768px) and (max-width: 1100px) {
   .sectionsDiv {

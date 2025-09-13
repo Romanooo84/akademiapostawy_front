@@ -11,6 +11,7 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
   const [file, setFile] = useState(null);
   const [pendingImages, setPendingImages] = useState([]); // 🔥 lista oczekujących obrazków
   const [successMessage, setSuccessMessage] = useState('');
+  const [editorContent, setEditorContent] = useState('');
 
   const addPendingImage = (file, localUrl) => {
     setPendingImages((prev) => [...prev, { file, localUrl }]);
@@ -67,7 +68,7 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
       {!successMessage && (
         <>
           <div>
-            <p>Tytuł</p>
+            {dataType !== "kindergardens" && dataType !== "partnerslist" ?(<p>Tytuł</p>):(<p>Nazwa</p>)}   
             <input
               value={title}
               onChange={(e) => setTitle(e.target.value)}
@@ -75,6 +76,7 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
               className={css.titleInput}
             />
           </div>
+          {dataType === "getblogcontnet" && (
           <div>
             <p>Autor</p>
             <input
@@ -84,10 +86,21 @@ const AddContent = ({ preview, handleFileChange, dataType }) => {
               className={css.titleInput}
             />
           </div>
-          <div>
-            <p>Tekst</p>
-            <TextEditor value={text}  onChange={setText} addPendingImage={addPendingImage} />
-          </div>
+          )}
+            
+            {dataType !== "kindergardens" && dataType !== "partnerslist" && (
+               <div>
+              <p>Tekst</p>
+            <TextEditor
+              value={editorContent}
+              onChange={setEditorContent}
+              addPendingImage={(file, localUrl) =>
+                setPendingImages((prev) => [...prev, { file, localUrl }])
+              }
+            />
+             </div>
+          )}
+         
 
           <div style={{ marginTop: 15 }}>
             <p>Zdjęcie (główne)</p>

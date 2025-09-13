@@ -5,7 +5,7 @@ import Image from "@tiptap/extension-image";
 import Youtube from "@tiptap/extension-youtube";
 import link from "../../link";
 
-export default function TextEditor({ value, onChange, addPendingImage }) {
+export default function TextEditor({ value, onChange, addPendingImage, }) {
   const editor = useEditor({
     extensions: [
       StarterKit,

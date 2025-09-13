@@ -111,13 +111,16 @@ const AdminContent = ({ data, dataType, startAddContent, setStartAddContent }) =
       {editingItem && (
         <div style={{ border: "2px solid #888", padding: 20, marginBottom: 20 }}>
           <h3>Edytujesz: {editingItem.title}</h3>
-          <TextEditor
-            value={editorContent}
-            onChange={setEditorContent}
-            addPendingImage={(file, localUrl) =>
-              setPendingImages((prev) => [...prev, { file, localUrl }])
-            }
-          />
+       {dataType !== "kindergardens" && dataType !== "partnerslist" && (
+            <TextEditor
+              value={editorContent}
+              onChange={setEditorContent}
+              addPendingImage={(file, localUrl) =>
+                setPendingImages((prev) => [...prev, { file, localUrl }])
+              }
+            />
+          )}
+
           <input
             type="file"
             accept="image/*"
@@ -143,7 +146,7 @@ const AdminContent = ({ data, dataType, startAddContent, setStartAddContent }) =
       )}
 
       {/* Lista wpisów */}
-      <DownloadedContents entries={entries} onClick={onClick} onEdit={onEdit} />
+      <DownloadedContents entries={entries} dataType={dataType} onClick={onClick} onEdit={onEdit} />
     </div>
   );
 };

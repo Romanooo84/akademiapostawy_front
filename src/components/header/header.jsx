@@ -15,7 +15,6 @@ const Header=()=>{
     const buttonsList = ['home', `o nas`, `blog`, `treningi`, `produkty`, `współpraca`];
     
     const path = location.pathname.split('/');
-    console.log(path)
     const pageTitle = decodeURIComponent(path[path.length - 1] || 'home'); // dla '/' domyślnie 'home'
 
     const markup = buttonsList.map((button, index) => {

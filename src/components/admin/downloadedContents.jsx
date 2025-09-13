@@ -1,7 +1,9 @@
 import css from './downloadedContent.module.css'
 
 // DownloadedContents.jsx
-const DownloadedContents = ({ entries, onClick, onEdit }) => {
+const DownloadedContents = ({ entries, onClick, onEdit, dataType }) => {
+
+    console.log(dataType)
   return (
     <div style={{ marginTop: 20 }}>
       {entries.map((item, index) => (
@@ -13,8 +15,8 @@ const DownloadedContents = ({ entries, onClick, onEdit }) => {
             padding: 10,
           }}
         >
-          <p>Tytuł: {item.title}</p>
-          <p>Autor: {item.author}</p>
+          {dataType===`getblogcontent` || dataType===`projectscontent`|| dataType===`getmainpicturelist`?(<p>Tytuł: {item.title}</p>):(<p> {item.title}</p>)}
+          {dataType===`getblogcontent`?(<p>Autor: {item.author}</p>):(<></>)}
           <div className={css.itemContent} dangerouslySetInnerHTML={{ __html: item.content}}/>
           {item.img && (
             <img
